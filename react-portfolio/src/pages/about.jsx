@@ -9,7 +9,7 @@ export const About = () => {
             <Header />
             <main className={styles.c_main}>
                 <Hero template='landing page' type='about' />
-                <h2>This is the About Page</h2>
+                <h2>This is the About Page for my site.</h2>
             </main>
             <Footer />
         </div>
