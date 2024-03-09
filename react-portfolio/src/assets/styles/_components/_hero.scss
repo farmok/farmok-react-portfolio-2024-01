@@ -1,0 +1,53 @@
+.c_hero {
+	&[data-page-template='landing page'] {
+		height: 100vh;
+		justify-content: center;
+		max-width: 1200px;
+
+		&[data-page-type='leadership'] {
+			background:
+				url(../../assets/images/leadership/hero/from-curiosity-to-impact--foreground.png) center center / 1200px
+					no-repeat,
+				url(../../assets/images/leadership/hero/backgrounds/from-curiosity-to-impact--background.jpg) center
+					center / 1200px no-repeat,
+				$brand-black;
+		}
+	}
+
+	h1.hero_headline {
+		align-self: center;
+		background-image: linear-gradient(
+			90deg,
+			$brand-yellow 10%,
+			$brand-orange 33.3%,
+			$brand-red 67.7%,
+			$brand-purple 90%
+		);
+		background-clip: text;
+		font-size: clamp(1rem, 14vw, 176px);
+		line-height: 1em;
+		padding: 0.25rem 0;
+		text-align: center;
+		-webkit-text-fill-color: transparent;
+		width: 100%;
+
+		span {
+			font-size: clamp(1rem, 19.5vw, 245px);
+		}
+	}
+
+	.hero_subhead {
+		color: $ui-primary;
+		font-size: 5vw;
+		font-size: clamp(1.25rem, 5vw, 62px);
+		font-weight: 700;
+		padding-right: 0.25em;
+		text-align: right;
+		width: 100%;
+	}
+
+	img {
+		border-radius: 1rem;
+		width: 100%;
+	}
+}
