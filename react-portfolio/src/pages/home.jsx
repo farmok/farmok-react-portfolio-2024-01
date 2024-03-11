@@ -1,7 +1,7 @@
 import styles from '../assets/styles/main.module.scss';
-import { Header } from '../components/layout/header/Header';
-import { Hero } from '../components/layout/hero/Hero';
-import { Footer } from '../components/layout/footer/Footer';
+import { Header } from '../components/layout/header';
+import { Hero } from '../components/layout/hero';
+import { Footer } from '../components/layout/footer';
 
 export const Home = () => {
     return (

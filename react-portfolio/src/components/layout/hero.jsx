@@ -1,4 +1,4 @@
-import styles from '../../../assets/styles/main.module.scss';
+import styles from '../../assets/styles/main.module.scss';
 
 // eslint-disable-next-line react/prop-types
 export const Hero = ({ template, type }) => {

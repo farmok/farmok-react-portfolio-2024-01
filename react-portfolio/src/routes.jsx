@@ -5,7 +5,7 @@ import { About } from './pages/about';
 
 import { Routes, Route } from 'react-router-dom';
 
-export const Foo = () => {
+export const Nav_Route = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />} />
