@@ -8,9 +8,9 @@ import { PrismicRichText, useFirstPrismicDocument } from '@prismicio/react'
 function App() {
   const [count, setCount] = useState(0)
 
-  const [myDocument] = useFirstPrismicDocument()
+  const [document] = useFirstPrismicDocument()
 
-  console.log(myDocument);
+  console.log(document);
 
   return (
     <>
@@ -34,10 +34,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <div><p>
-        {myDocument && (
-          <PrismicRichText field={myDocument.data.body[3].primary.topic_body[0]} />
-        )}</p>
+      <div>
+        {document && (
+          <PrismicRichText field={document.data.example_rich_text} />
+        )}
       </div>
     </>
   )
