@@ -16,18 +16,17 @@ const query = `{
   }
 }`;
 
-const { REACT_APP_SPACE_ID, REACT_APP_CDA_TOKEN } = process.env;
+const REACT_APP_SPACE_ID = import.meta.env.VITE_REACT_APP_SPACE_ID;
 
 function App() {
 
   const [page, setPage] = useState(null);
   // const [count, setCount] = useState(0)
 
-  console.log(REACT_APP_CDA_TOKEN + '---' + REACT_APP_SPACE_ID)
 
   useEffect(() => {
     window
-      .fetch(`https://graphql.contentful.com/content/v1/spaces/jwwsi6yg5ser/`, {
+      .fetch(`https://graphql.contentful.com/content/v1/spaces/${REACT_APP_SPACE_ID}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,26 +50,6 @@ function App() {
 
   return (
     <>
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
       <div className="App">
         <section className="c_hero">
           <img src={page.projectHeroImage.url} alt="" />
