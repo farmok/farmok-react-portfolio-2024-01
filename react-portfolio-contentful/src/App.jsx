@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import useContentful from "./hooks/use_contentful";
 import './App.css'
+import styles from './assets/styles/main.module.scss';
+import Hero from "./components/layout/hero";
 
 
 
-const query = `{
+const query = `query {
   projectHero(id: "5UZxUMOiGOyrL1dMCa9Ek8") {
     projectHeroImage {
       url
@@ -14,53 +14,40 @@ const query = `{
     projectSubTitle
     projectTags
   }
+  
+  projectSection(id: "6QsYpiG1XK30Who5JrKGMD"){
+    topicTitle
+    topicBody{
+      json
+    }
+    topicImage01 {
+      url
+      title
+    }
+    topicImage02 {
+      url
+      title
+    }
+  }
 }`;
-
-const REACT_APP_SPACE_ID = import.meta.env.VITE_REACT_APP_SPACE_ID;
 
 function App() {
 
-  const [page, setPage] = useState(null);
-  // const [count, setCount] = useState(0)
+  let { data, errors } = useContentful(query);
 
+  if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
+  if (!data) return <span>Loading...</span>;
 
-  useEffect(() => {
-    window
-      .fetch(`https://graphql.contentful.com/content/v1/spaces/${REACT_APP_SPACE_ID}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer _9p3Q-zBodSzjc1ObgbLdabl-t7aIOc4Sd5fcApTFW4",
-        },
-        body: JSON.stringify({ query }),
-      })
-      .then((response) => response.json())
-      .then(({ data, errors }) => {
-        if (errors) {
-          console.error(errors);
-        }
+  console.log(data);
 
-        setPage(data.projectHero);
-      });
-  }, []);
+  const { projectHero, projectSection } = data;
 
-  if (!page) {
-    return "Loading...";
-  }
+  console.log(projectSection)
 
   return (
-    <>
-      <div className="App">
-        <section className="c_hero">
-          <img src={page.projectHeroImage.url} alt="" />
-          <div className="c_title">
-            <h1 className="project_title">{page.projectTitle}</h1>
-            <h2>{page.projectSubTitle}</h2>
-            <p className="project_tags">{page.projectTags}</p>
-          </div>
-        </section>
-      </div>
-    </>
+    <div className={styles.App}>
+      <Hero type={projectHero} />
+    </div>
   )
 }
 

@@ -1,0 +1,102 @@
+.c_hero {
+	&[data-page-template='landing page'] {
+		height: 100vh;
+		justify-content: center;
+		max-width: 1200px;
+
+		&[data-page-type='leadership'] {
+			background:
+				url(../../assets/images/leadership/hero/from-curiosity-to-impact--foreground.png) center center / 1200px
+					no-repeat,
+				url(../../assets/images/leadership/hero/backgrounds/from-curiosity-to-impact--background.jpg) center
+					center / 1200px no-repeat,
+				$brand-black;
+		}
+	}
+
+	h1.hero_headline {
+		align-self: center;
+		background-image: linear-gradient(
+			90deg,
+			$brand-yellow 10%,
+			$brand-orange 33.3%,
+			$brand-red 67.7%,
+			$brand-purple 90%
+		);
+		background-clip: text;
+		font-size: clamp(1rem, 14vw, 176px);
+		line-height: 1em;
+		padding: 0.25rem 0;
+		text-align: center;
+		-webkit-text-fill-color: transparent;
+		width: 100%;
+
+		span {
+			font-size: clamp(1rem, 19.5vw, 245px);
+		}
+	}
+
+	.hero_subhead {
+		color: $ui-primary;
+		font-size: 5vw;
+		font-size: clamp(1.25rem, 5vw, 62px);
+		font-weight: 700;
+		padding-right: 0.25em;
+		text-align: right;
+		width: 100%;
+	}
+
+	img {
+		border-radius: 1rem;
+		width: 100%;
+	}
+
+	.c_title {
+		align-items: flex-start;
+		gap: 0.25rem;
+		margin-top: 1rem;
+		max-width: 960px;
+		padding: 1rem 0.5rem;
+		text-align: left;
+
+		h1.project_title {
+			background-image: linear-gradient(
+				8370deg,
+				rgb(252, 252, 244) 0%,
+				rgb(255, 201, 89) 24.9582%,
+				rgb(245, 126, 84) 50.5208%,
+				rgb(207, 72, 105) 75%,
+				rgb(102, 27, 118) 114.653%
+			);
+			background-clip: text;
+			font-size: 2rem;
+			line-height: 100%;
+			-webkit-text-fill-color: transparent;
+
+			@media screen and (min-width: 620px) {
+				font-size: 3rem;
+			}
+		}
+
+		h2.project_subtitle {
+			background-image: linear-gradient(0deg, $ui-text-light, $ui-text-light);
+			background-clip: text;
+			display: block;
+			font-size: 0.65em;
+			font-weight: 700;
+			line-height: 120%;
+			text-transform: none;
+			-webkit-text-fill-color: transparent;
+
+			@media screen and (min-width: 620px) {
+				font-size: 2rem;
+			}
+		}
+
+		.project_tags {
+			color: $brand-orange;
+			font-size: 1rem;
+			font-weight: 700;
+		}
+	}
+}
