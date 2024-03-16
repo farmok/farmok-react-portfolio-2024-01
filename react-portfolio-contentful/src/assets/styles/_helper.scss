@@ -1,0 +1,18 @@
+// Helper classes
+
+*.m_media_left,
+*.m_media_right {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media screen and (min-width: 620px) {
+    *.m_media_left {
+        flex-direction: row-reverse;
+    }
+
+    *.m_media_right {
+        flex-direction: row;
+    }
+}

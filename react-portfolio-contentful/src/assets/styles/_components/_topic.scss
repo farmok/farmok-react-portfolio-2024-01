@@ -1,0 +1,36 @@
+.c_topic {
+    max-width: 960px;
+
+    @media screen and (min-width: 620px) {
+        gap: 4rem;
+    }
+
+    .topic_content {
+        padding: 1rem 0.5rem;
+
+        h3.topic_title {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+
+            @media screen and (min-width: 620px) {
+                font-size: 2.25rem;
+            }
+        }
+
+        .topic_body {
+            border-left: 4px solid $brand-yellow;
+            padding: 0.75rem 0 0.75rem 1.5rem;
+
+            p {
+                margin: 0 0 2rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

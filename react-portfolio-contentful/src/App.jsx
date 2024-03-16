@@ -48,7 +48,9 @@ function App() {
   return (
     <div className={styles.App}>
       <Hero type={projectHero} />
-      <Topic type={projectSection} />
+      <section className={styles.c_body}>
+        <Topic type={projectSection} />
+      </section>
     </div>
   )
 }
