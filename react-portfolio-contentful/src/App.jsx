@@ -2,6 +2,7 @@ import useContentful from "./hooks/use_contentful";
 import './App.css'
 import styles from './assets/styles/main.module.scss';
 import Hero from "./components/layout/hero";
+import Topic from "./components/common/topic";
 
 
 
@@ -47,6 +48,7 @@ function App() {
   return (
     <div className={styles.App}>
       <Hero type={projectHero} />
+      <Topic type={projectSection} />
     </div>
   )
 }
