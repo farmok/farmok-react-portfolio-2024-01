@@ -47,7 +47,7 @@ function Home() {
   const { projectPage } = data;
 
   const projectHero = projectPage.projectHero
-  const projectSection = projectPage.projectSectionCollection
+  const projectSection = projectPage.projectSectionCollection.items
 
   console.log(projectSection)
 
@@ -57,7 +57,10 @@ function Home() {
       <main className={styles.c_main} data-page-template="project">
         <Hero type={projectHero} />
         <section className={styles.c_body}>
-          <Topic type={projectPage.projectSectionCollection} />
+          {projectSection.map((section, index) => (
+            // <Topic key={section.} type={projectSection[index]} />
+            console.log(section + " " + index)
+          ))}
         </section>
       </main>
       <Footer />
