@@ -1,6 +1,6 @@
 import styles from '../../assets/styles/main.module.scss';
 
-export const Social_Links = () => {
+function Social_Links() {
     return (
         <ul className={styles.nav__group}>
             <li className={styles.nav__link}><a href="https://www.linkedin.com/in/farmok/" className={styles.images_10} target="_blank"><svg
@@ -24,4 +24,6 @@ export const Social_Links = () => {
             </a></li >
         </ul >
     );
-};
+}
+
+export default Social_Links;

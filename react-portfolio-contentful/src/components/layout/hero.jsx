@@ -7,11 +7,11 @@ import styles from '../../assets/styles/main.module.scss';
 function Hero({ type }) {
     return (
         <section className={styles.c_hero}>
-            <img src={type.projectHeroImage.url} alt="" />
+            <img src={type.items[0].projectHeroImage.url} alt={type.items[0].projectHeroImage.title} />
             <div className={styles.c_title}>
-                <h1 className={styles.project_title}>{type.projectTitle}</h1>
-                <h2 className={styles.project_subtitle}>{type.projectSubTitle}</h2>
-                <p className={styles.project_tags}>{type.projectTags}</p>
+                <h1 className={styles.project_title}>{type.items[0].projectTitle}</h1>
+                <h2 className={styles.project_subtitle}>{type.items[0].projectSubTitle}</h2>
+                <p className={styles.project_tags}>{type.items[0].projectTags}</p>
             </div>
         </section>
     );

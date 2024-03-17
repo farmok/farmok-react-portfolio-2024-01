@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styles from '../../assets/styles/main.module.scss';
 
-export const Navigation = ({ template }) => {
+function Navigation({ template }) {
     return (
         <nav className={styles.c_nav} data-page-template={template}>
             <ul className={styles.nav__group}>
@@ -17,4 +17,6 @@ export const Navigation = ({ template }) => {
             </ul>
         </nav >
     );
-};
+}
+
+export default Navigation;

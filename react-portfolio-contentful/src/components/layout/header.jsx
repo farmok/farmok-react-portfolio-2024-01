@@ -1,7 +1,7 @@
 import styles from '../../assets/styles/main.module.scss';
-import { Navigation } from '../common/navigation';
+import Navigation from '../common/navigation';
 
-export const Header = () => {
+function Header() {
     return (
         <header className={styles.c_header}>
             <h2 className={styles.header_logo}>
@@ -10,4 +10,6 @@ export const Header = () => {
             <Navigation template='header' />
         </header>
     );
-};
+}
+
+export default Header;
