@@ -17,7 +17,7 @@ const query = `query{
         projectSubTitle
         projectTags
     }
-    projectSectionCollection{
+    projectSectionCollection(limit: 10){
       items{
           topicTitle
           topicBody{
@@ -49,8 +49,6 @@ function Home() {
   const projectHero = projectPage.projectHero
   const projectSection = projectPage.projectSectionCollection.items
 
-  console.log(projectSection)
-
   return (
     <div className={styles.app} id='farid-portfolio'>
       <Header />
@@ -58,8 +56,7 @@ function Home() {
         <Hero type={projectHero} />
         <section className={styles.c_body}>
           {projectSection.map((section, index) => (
-            // <Topic key={section.} type={projectSection[index]} />
-            console.log(section + " " + index)
+            <Topic key={index} type={section} />
           ))}
         </section>
       </main>

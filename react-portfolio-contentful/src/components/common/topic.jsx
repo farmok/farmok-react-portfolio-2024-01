@@ -16,17 +16,18 @@ const RICHTEXT_OPTIONS = {
 }
 
 function Topic({ type }) {
+    console.log(type)
     return (
         <article className={styles.c_topic + " " + styles.m_media_right}>
             <div className={styles.topic_content}>
-                <h3 className={styles.topic_title}>{type.items[0].topicTitle}</h3>
+                <h3 className={styles.topic_title}>{type.topicTitle}</h3>
                 <div className={styles.topic_body}>
-                    {documentToReactComponents(type.items[0].topicBody.json, RICHTEXT_OPTIONS)}
+                    {documentToReactComponents(type.topicBody.json, RICHTEXT_OPTIONS)}
                 </div>
             </div>
             <div className={styles.images_100}>
-                <img src={type.items[0].topicImage01.url} alt={type.items[0].topicImage01.title} />
-                <img src={type.items[0].topicImage02.url} alt={type.items[0].topicImage02.title} />
+                <img src={type.topicImage01.url} alt={type.topicImage01.title} />
+                <img src={type.topicImage02.url} alt={type.topicImage02.title} />
             </div>
         </article >
     );

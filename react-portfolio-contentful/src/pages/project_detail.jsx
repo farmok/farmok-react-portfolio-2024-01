@@ -1,17 +1,14 @@
-import useContentful from "./hooks/use_contentful";
-import styles from './assets/styles/main.module.scss';
-import Hero from "./components/layout/hero";
-import Topic from "./components/common/topic";
+import useContentful from '../hooks/use_contentful';
 
+import styles from '../assets/styles/main.module.scss';
 import Header from '../components/layout/header';
 import Footer from '../components/layout/footer';
-
-
+import Hero from '../components/layout/hero';
+import Topic from '../components/common/topic';
 
 const query = `query{
   projectPage(id:"U12v2mRNOc9EK6dewMY3L"){
-    projectHeroCollection{
-      items{
+    projectHero{
         projectHeroImage{
           url
           title
@@ -19,9 +16,8 @@ const query = `query{
         projectTitle
         projectSubTitle
         projectTags
-      }
     }
-    projectSectionCollection{
+    projectSectionCollection(limit: 10){
       items{
           topicTitle
           topicBody{
@@ -43,29 +39,30 @@ const query = `query{
 
 function ProjectDetails() {
 
-    let { data, errors } = useContentful(query);
+  let { data, errors } = useContentful(query);
 
-    if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
-    if (!data) return <span>Loading...</span>;
+  if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
+  if (!data) return <span>Loading...</span>;
 
-    console.log(data);
+  const { projectPage } = data;
 
-    const { projectHero, projectSection } = data;
+  const projectHero = projectPage.projectHero
+  const projectSection = projectPage.projectSectionCollection.items
 
-    console.log(projectSection)
-
-    return (
-        <div className={styles.App}>
-            <Header />
-            <main className={styles.c_main}>
-                <Hero type={projectHero} />
-                <section className={styles.c_body}>
-                    <Topic type={projectSection} />
-                </section>
-            </main>
-            <Footer />
-        </div>
-    )
+  return (
+    <div className={styles.app} id='farid-portfolio'>
+      <Header />
+      <main className={styles.c_main} data-page-template="project">
+        <Hero type={projectHero} />
+        <section className={styles.c_body}>
+          {projectSection.map((section, index) => (
+            <Topic key={index} type={section} />
+          ))}
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
-export default ProjectDetails
+export default ProjectDetails;
