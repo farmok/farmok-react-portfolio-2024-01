@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import PropTypes from "prop-types";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 
@@ -32,20 +31,6 @@ function Topic({ type }) {
         </article >
     );
 }
-
-Topic.propTypes = {
-    type: PropTypes.shape({
-        topicImage01: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-        }),
-        topicImage02: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-        }),
-        topicTitle: PropTypes.string.isRequired,
-    }).isRequired,
-};
 
 export default Topic;
 

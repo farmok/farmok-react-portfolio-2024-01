@@ -1,3 +1,4 @@
+@import './App.module.scss';
 @import './utils';
 @import './base';
 @import './layout';
@@ -6,5 +7,5 @@
 @import './_components/footer';
 @import './_components/hero';
 @import './_components/topic';
-@import './App.module.scss';
+@import './_pages/project';
 @import './helper';

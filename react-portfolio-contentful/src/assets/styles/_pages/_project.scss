@@ -1,0 +1,29 @@
+.c_main {
+    &[data-page-template='project'] {
+        background:
+            url(../images/black-hole-bg.jpg) center -660px / 1200px no-repeat,
+            var(--brand-black);
+        max-width: 1200px;
+        padding: 0 0.25rem 1rem;
+
+        & > .c_hero {
+            margin-top: 75px;
+            max-width: 1200px;
+        }
+
+        & > .c_introduction {
+            align-items: flex-start;
+            max-width: 960px;
+        }
+
+        & > .c_body {
+            align-items: flex-start;
+            gap: 4rem;
+            max-width: 960px;
+        }
+
+        .c_topic {
+            max-width: 960px;
+        }
+    }
+}

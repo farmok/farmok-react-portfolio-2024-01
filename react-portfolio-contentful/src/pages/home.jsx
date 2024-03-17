@@ -8,8 +8,7 @@ import Topic from '../components/common/topic';
 
 const query = `query{
   projectPage(id:"U12v2mRNOc9EK6dewMY3L"){
-    projectHeroCollection{
-      items{
+    projectHero{
         projectHeroImage{
           url
           title
@@ -17,7 +16,6 @@ const query = `query{
         projectTitle
         projectSubTitle
         projectTags
-      }
     }
     projectSectionCollection{
       items{
@@ -41,25 +39,30 @@ const query = `query{
 
 function Home() {
 
-    let { data, errors } = useContentful(query);
+  let { data, errors } = useContentful(query);
 
-    if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
-    if (!data) return <span>Loading...</span>;
+  if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
+  if (!data) return <span>Loading...</span>;
 
-    const { projectPage } = data;
+  const { projectPage } = data;
 
-    return (
-        <div className={styles.app} id='farid-portfolio'>
-            <Header />
-            <main className={styles.c_main}>
-                <Hero type={projectPage.projectHeroCollection} />
-                <section className={styles.c_body}>
-                    <Topic type={projectPage.projectSectionCollection} />
-                </section>
-            </main>
-            <Footer />
-        </div>
-    );
+  const projectHero = projectPage.projectHero
+  const projectSection = projectPage.projectSectionCollection
+
+  console.log(projectSection)
+
+  return (
+    <div className={styles.app} id='farid-portfolio'>
+      <Header />
+      <main className={styles.c_main} data-page-template="project">
+        <Hero type={projectHero} />
+        <section className={styles.c_body}>
+          <Topic type={projectPage.projectSectionCollection} />
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
 export default Home;
