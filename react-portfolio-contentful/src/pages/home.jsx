@@ -33,7 +33,18 @@ const query = `query{
           }
         }
       }
+    projectCard{
+      cardId
+      projectThumbnail{
+        url
+        title
+      }
+      projectTitle
+      projectSubtitle
+      projectTag
+      projectUrl
     }
+  }
   }
 `;
 
@@ -45,6 +56,8 @@ function Home() {
   if (!data) return <span>Loading...</span>;
 
   const { projectPage } = data;
+
+  console.log(projectPage)
 
   const projectHero = projectPage.projectHero
   const projectSection = projectPage.projectSectionCollection.items

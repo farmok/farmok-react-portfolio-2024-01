@@ -6,8 +6,18 @@ import Footer from '../components/layout/footer';
 import Hero from '../components/layout/hero';
 import Topic from '../components/common/topic';
 
-const query = `query{
-  projectPage(id:"U12v2mRNOc9EK6dewMY3L"){
+import { useParams } from 'react-router-dom';
+
+// "U12v2mRNOc9EK6dewMY3L"
+
+
+
+function ProjectDetails() {
+
+  const id = useParams()
+
+  const query = `query{
+  projectPage(id: "${id.id}"){
     projectHero{
         projectHeroImage{
           url
@@ -37,7 +47,7 @@ const query = `query{
   }
 `;
 
-function ProjectDetails() {
+  console.log(query)
 
   let { data, errors } = useContentful(query);
 
