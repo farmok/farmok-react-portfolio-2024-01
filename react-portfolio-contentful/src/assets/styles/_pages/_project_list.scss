@@ -1,0 +1,32 @@
+.portfolio_block {
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    padding: 1rem 1.5rem;
+    width: 100%;
+}
+
+.portfolio_block {
+    gap: 1rem;
+}
+
+.portfolio_block__group {
+    align-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem 0.5rem;
+    justify-content: space-between;
+}
+
+.portfolio_block__item {
+    border-radius: 1rem;
+    display: block;
+    width: 48%;
+}
+
+@media screen and (min-width: 620px) {
+    .portfolio_block__item {
+        width: 24%;
+    }
+}

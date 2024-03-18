@@ -18,7 +18,7 @@ const RICHTEXT_OPTIONS = {
 function Topic({ type }) {
     console.log(type)
     return (
-        <article className={styles.c_topic + " " + styles.m_media_right}>
+        <article className={styles.c_topic}>
             <div className={styles.topic_content}>
                 <h3 className={styles.topic_title}>{type.topicTitle}</h3>
                 <div className={styles.topic_body}>
@@ -27,7 +27,7 @@ function Topic({ type }) {
             </div>
             <div className={styles.images_100}>
                 <img src={type.topicImage01.url} alt={type.topicImage01.title} />
-                <img src={type.topicImage02.url} alt={type.topicImage02.title} />
+                {type.topicImage02 && <img src={type.topicImage02.url} alt={type.topicImage02.title} />}
             </div>
         </article >
     );

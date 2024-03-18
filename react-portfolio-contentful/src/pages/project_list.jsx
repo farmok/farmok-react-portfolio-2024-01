@@ -52,7 +52,7 @@ function ProjectList() {
                     <ul className={styles.portfolio_block__group}>
                         {projects.map((project, index) => (
                             <li key={index} className={styles.portfolio_block__item}>
-                                <Link to={`/project_detail/${project.sys.id}`} className={styles.card} data-role='design direction'>
+                                <Link to={`/project_detail/${project.sys.id}`} className={styles.c_card} data-role={project.projectCard.projectTag}>
                                     <img className={styles.card_image} src={project.projectCard.projectThumbnail.url} alt="" />
                                     <div className={styles.card_label}>
                                         <div className={styles.card_label}>

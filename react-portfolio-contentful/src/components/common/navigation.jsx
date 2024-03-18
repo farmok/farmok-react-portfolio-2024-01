@@ -12,6 +12,9 @@ function Navigation({ template }) {
                     <a href='/leadership'>Leadership</a>
                 </li>
                 <li className={styles.nav__link}>
+                    <a href='/project_list'>Projects</a>
+                </li>
+                <li className={styles.nav__link}>
                     <a href='/about'>Resume</a>
                 </li>
             </ul>

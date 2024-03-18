@@ -1,8 +1,21 @@
 .c_topic {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     max-width: 960px;
+    padding: 1rem 0.5rem;
+    width: 100%;
 
     @media screen and (min-width: 620px) {
         gap: 4rem;
+
+        &:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
     }
 
     .topic_content {
