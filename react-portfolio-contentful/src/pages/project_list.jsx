@@ -55,10 +55,8 @@ function ProjectList() {
                                 <Link to={`/project_detail/${project.sys.id}`} className={styles.c_card} data-role={project.projectCard.projectTag}>
                                     <img className={styles.card_image} src={project.projectCard.projectThumbnail.url} alt="" />
                                     <div className={styles.card_label}>
-                                        <div className={styles.card_label}>
-                                            <h4>{project.projectCard.projectTitle}</h4>
-                                            <p>{project.projectCard.projectSubtitle}</p>
-                                        </div>
+                                        <h4>{project.projectCard.projectTitle}</h4>
+                                        <p>{project.projectCard.projectSubtitle}</p>
                                     </div>
                                 </Link>
                             </li>
