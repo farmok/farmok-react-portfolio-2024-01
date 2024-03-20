@@ -65,6 +65,68 @@
 	}
 }
 
+*[data-page-theme='home'] > .c_hero {
+	background:
+		url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
+			no-repeat,
+		url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1200px
+			no-repeat,
+		$brand-black;
+
+	h1.hero_headline {
+		align-self: center;
+		padding: 0.25rem 0;
+		width: 100%;
+
+		& > p {
+			&:first-child {
+				background-image: linear-gradient(
+					90deg,
+					$brand-yellow 10%,
+					$brand-orange 33.3%,
+					$brand-red 67.7%,
+					$brand-purple 90%
+				);
+				background-clip: text;
+				// font-size: clamp(1rem, 14vw, 176px);
+				font-size: 20vw;
+				font-weight: 900;
+				line-height: 0.8em;
+				text-align: center;
+				-webkit-text-fill-color: transparent;
+			}
+
+			&:last-child {
+				background-image: linear-gradient(
+					90deg,
+					$brand-yellow 10%,
+					$brand-orange 33.3%,
+					$brand-red 67.7%,
+					$brand-purple 90%
+				);
+				background-clip: text;
+				// font-size: clamp(1rem, 19.5vw, 245px);
+				font-size: 15vw;
+				font-weight: 900;
+				line-height: 0.8em;
+				text-align: center;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+
+	h2.hero_subhead {
+		color: $ui-primary;
+		font-size: 5vw;
+		font-size: clamp(1.25rem, 5vw, 62px);
+		font-weight: 700;
+		padding-right: 0.25em;
+		text-align: right;
+		text-transform: none;
+		width: 100%;
+	}
+}
+
 .c_introduction {
 	align-items: flex-start;
 	gap: 2rem;
@@ -205,7 +267,7 @@
 		$brand-black;
 }
 
-.c_section[data-section-name='Embrace Systems'] > .c_hero:before {
+.c_section[data-section-name='Embracing Systems'] > .c_hero:before {
 	background:
 		$c-hero-background,
 		url(https://ucarecdn.com/6cd04403-2789-4d99-bd0f-4c216d0a2258/-/preview/1200x1200/) center center / contain
@@ -215,7 +277,7 @@
 		$brand-black;
 }
 
-.c_section[data-section-name='Scale Pragmatically'] > .c_hero:before {
+.c_section[data-section-name='Pragmatic Scaling'] > .c_hero:before {
 	background:
 		$c-hero-background,
 		url(https://ucarecdn.com/9a6d966d-a693-464c-9db7-6f82da4ca04e/-/preview/1200x1200/) center center / contain
