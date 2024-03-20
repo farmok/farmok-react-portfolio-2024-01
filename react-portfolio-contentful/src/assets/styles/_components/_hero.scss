@@ -7,10 +7,10 @@
 
 *[data-page-theme='leadership'] > .c_hero {
 	background:
-		url(../../assets/images/leadership/hero/from-curiosity-to-impact--foreground.png) center center / 1200px
+		url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
 			no-repeat,
-		url(../../assets/images/leadership/hero/backgrounds/from-curiosity-to-impact--background.jpg) center center /
-			1200px no-repeat,
+		url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1200px
+			no-repeat,
 		$brand-black;
 
 	h1.hero_headline {
@@ -53,13 +53,14 @@
 		}
 	}
 
-	.hero_subhead {
+	h2.hero_subhead {
 		color: $ui-primary;
 		font-size: 5vw;
 		font-size: clamp(1.25rem, 5vw, 62px);
 		font-weight: 700;
 		padding-right: 0.25em;
 		text-align: right;
+		text-transform: none;
 		width: 100%;
 	}
 }
@@ -177,37 +178,39 @@
 .c_section[data-section-name='Cultivate Relationships'] > .c_hero:before {
 	background:
 		$c-hero-background,
-		url(../../assets/images/leadership/hero/cultivate-relationships--foreground.png) center center / contain
+		url(https://ucarecdn.com/80e2064d-b932-4823-9ade-fc4f9d9d40a6/-/preview/1200x1200/) center center / contain
 			no-repeat,
-		url(../../assets/images/leadership/hero/backgrounds/cultivate-relationships--background.webp) center bottom /
-			contain no-repeat,
+		url(https://ucarecdn.com/f9259c13-e9cb-4e15-a3f8-2a3f4bb13ca7/-/preview/1200x1200/) center bottom / contain
+			no-repeat,
 		$brand-black;
 }
 
 .c_section[data-section-name='Prioritizing Rigorously'] > .c_hero:before {
 	background:
 		$c-hero-background,
-		url(../../assets/images/leadership/hero/prioritize-rigorously--foreground.png) center center / contain no-repeat,
-		url(../../assets/images/leadership/hero/backgrounds/prioritize-rigorously--background.webp) center center /
-			contain no-repeat,
+		url(https://ucarecdn.com/9d17c298-b345-4804-9ac5-bf0adb033d4c/-/preview/1200x1200/) center center / contain
+			no-repeat,
+		url(https://ucarecdn.com/1331cb12-a9f1-4556-a80f-2468263b4807/-/preview/1200x1200/) center center / contain
+			no-repeat,
 		$brand-black;
 }
 
 .c_section[data-section-name='Unleash Curiosity'] > .c_hero:before {
 	background:
 		$c-hero-background,
-		url(../../assets/images/leadership/hero/unleash-your-curiosity--foreground.png) center bottom / contain
+		url(https://ucarecdn.com/60dcc811-a635-488a-a447-058962a6eb29/-/preview/1200x1200/) center bottom / contain
 			no-repeat,
-		url(../../assets/images/leadership/hero/backgrounds/unleash-your-curiosity--background.webp) center bottom /
-			contain no-repeat,
+		url(https://ucarecdn.com/10bdec2b-6a50-40e7-a292-2e00fc84bcc3/-/preview/1200x1200/) center bottom / contain
+			no-repeat,
 		$brand-black;
 }
 
-.c_section[data-section-name='embrace systems'] > .c_hero:before {
+.c_section[data-section-name='Embrace Systems'] > .c_hero:before {
 	background:
 		$c-hero-background,
-		url(../../assets/images/leadership/hero/embrace-systems--foreground.png) center center / contain no-repeat,
-		url(../../assets/images/leadership/hero/backgrounds/embrace-systems--background.webp) center center / contain
+		url(https://ucarecdn.com/6cd04403-2789-4d99-bd0f-4c216d0a2258/-/preview/1200x1200/) center center / contain
+			no-repeat,
+		url(https://ucarecdn.com/275e7b89-49b1-43a1-ae82-7c4883c95b79/-/preview/1200x1200/) center center / contain
 			no-repeat,
 		$brand-black;
 }
@@ -215,8 +218,9 @@
 .c_section[data-section-name='Scale Pragmatically'] > .c_hero:before {
 	background:
 		$c-hero-background,
-		url(../../assets/images/leadership/hero/scale-pragmatically--foreground.png) center center / contain no-repeat,
-		url(../../assets/images/leadership/hero/backgrounds/scale-pragmatically--background.webp) center center /
-			contain no-repeat,
+		url(https://ucarecdn.com/9a6d966d-a693-464c-9db7-6f82da4ca04e/-/preview/1200x1200/) center center / contain
+			no-repeat,
+		url(https://ucarecdn.com/92da340c-ddc8-4db5-a42d-6fe9afe3de98/-/preview/1200x1200/) center center / contain
+			no-repeat,
 		$brand-black;
 }
