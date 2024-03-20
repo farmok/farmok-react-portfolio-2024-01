@@ -25,13 +25,12 @@ function Topic({ type }) {
                     {documentToReactComponents(type.topicBody.json, RICHTEXT_OPTIONS)}
                 </div>
             </div>
-            <div className={styles.images_100}>
-                <img src={type.topicImage01.url} alt={type.topicImage01.title} />
-                {type.topicImage02 && <img src={type.topicImage02.url} alt={type.topicImage02.title} />}
+            <div className={styles.topic_media}>
+                <figure className={styles.images_100}><img src={type.topicImage01.url} alt={type.topicImage01.title} /><figcaption className={styles.topic_image__caption}>{type.topicImage01.description}</figcaption></figure>
+                {type.topicImage02 && <figure className={styles.images_100}><img src={type.topicImage02.url} alt={type.topicImage02.title} /><figcaption className={styles.topic_image__caption}>{type.topicImage02.description}</figcaption></figure>}
             </div>
         </article >
     );
 }
 
 export default Topic;
-

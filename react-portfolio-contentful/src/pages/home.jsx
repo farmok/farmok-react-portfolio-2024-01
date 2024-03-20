@@ -3,7 +3,7 @@ import useContentful from '../hooks/use_contentful';
 import styles from '../assets/styles/main.module.scss';
 import Header from '../components/layout/header';
 import Footer from '../components/layout/footer';
-import Hero from '../components/layout/hero';
+import Hero from '../components/layout/project_hero';
 import Topic from '../components/common/topic';
 
 const query = `query{
@@ -34,7 +34,6 @@ const query = `query{
         }
       }
     projectCard{
-      cardId
       projectThumbnail{
         url
         title
@@ -42,7 +41,6 @@ const query = `query{
       projectTitle
       projectSubtitle
       projectTag
-      projectUrl
     }
   }
   }

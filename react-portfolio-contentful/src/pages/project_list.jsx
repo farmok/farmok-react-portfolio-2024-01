@@ -40,24 +40,25 @@ function ProjectList() {
     console.log(projects)
 
     return (
-        <div className={styles.app} id='farid-portfolio'>
+        <div className={styles.c_container} id='farid-portfolio'>
             <Header />
             <main className={styles.c_main} data-page-template='project'>
                 <section className={styles.c_hero}>
                     <div className={styles.c_title}>
-                        <h1 className={styles.project_title}>Collection of My Work</h1>
+                        <h1 className={styles.project_title}>Collection of Projects</h1>
                     </div>
                 </section>
-                <section className={styles.c_portfolio}>
-                    <ul className={styles.portfolio_block__group}>
+                <section className={styles.c_body}>
+                    <ul className={styles.project_list}>
                         {projects.map((project, index) => (
-                            <li key={index} className={styles.portfolio_block__item}>
+                            <li key={index} className={styles.project_list__item}>
                                 <Link to={`/project_detail/${project.sys.id}`} className={styles.c_card} data-role={project.projectCard.projectTag}>
                                     <img className={styles.card_image} src={project.projectCard.projectThumbnail.url} alt="" />
                                     <div className={styles.card_label}>
                                         <h4>{project.projectCard.projectTitle}</h4>
                                         <p>{project.projectCard.projectSubtitle}</p>
                                     </div>
+                                    <p className={styles.card_cta}>Explore</p>
                                 </Link>
                             </li>
                         ))}

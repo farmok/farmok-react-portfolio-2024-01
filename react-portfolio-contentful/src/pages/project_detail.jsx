@@ -3,7 +3,7 @@ import useContentful from '../hooks/use_contentful';
 import styles from '../assets/styles/main.module.scss';
 import Header from '../components/layout/header';
 import Footer from '../components/layout/footer';
-import Hero from '../components/layout/hero';
+import Hero from '../components/layout/project_hero';
 import Topic from '../components/common/topic';
 
 import { useParams } from 'react-router-dom';
@@ -59,8 +59,10 @@ function ProjectDetails() {
   const projectHero = projectPage.projectHero
   const projectSection = projectPage.projectSectionCollection.items
 
+  console.log(projectHero)
+
   return (
-    <div className={styles.app} id='farid-portfolio'>
+    <div className={styles.c_container} id='farid-portfolio'>
       <Header />
       <main className={styles.c_main} data-page-template="project">
         <Hero type={projectHero} />
