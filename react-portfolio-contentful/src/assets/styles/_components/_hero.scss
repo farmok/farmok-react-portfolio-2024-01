@@ -1,8 +1,63 @@
 *[data-page-template='landing page'] > .c_hero {
-	height: 100vh;
+	height: 80vh;
 	justify-content: center;
 	max-width: 1200px;
 	min-height: 1200px;
+
+	h1.hero_headline {
+		align-self: center;
+		padding: 0.25rem 0;
+		width: 100%;
+
+		& > p {
+			&:first-child {
+				background-image: linear-gradient(
+					90deg,
+					$brand-white 10%,
+					$brand-yellow 20%,
+					$brand-orange 35%,
+					$brand-red 50%,
+					$brand-purple 65%,
+					$brand-violet 80%,
+					$brand-black 90%
+				);
+				background-clip: text;
+				font-weight: 900;
+				line-height: 0.8em;
+				text-align: center;
+				-webkit-text-fill-color: transparent;
+			}
+
+			&:last-child {
+				background-image: linear-gradient(
+					90deg,
+					$brand-white 10%,
+					$brand-yellow 20%,
+					$brand-orange 35%,
+					$brand-red 50%,
+					$brand-purple 65%,
+					$brand-violet 80%,
+					$brand-black 90%
+				);
+				background-clip: text;
+				font-weight: 900;
+				line-height: 0.8em;
+				text-align: center;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+
+	h2.hero_subhead {
+		color: $ui-primary;
+		font-size: 5vw;
+		font-size: clamp(1.25rem, 5vw, 62px);
+		font-weight: 700;
+		padding-right: 0.25em;
+		text-align: right;
+		text-transform: none;
+		width: 100%;
+	}
 }
 
 *[data-page-theme='leadership'] > .c_hero {
@@ -14,54 +69,13 @@
 		$brand-black;
 
 	h1.hero_headline {
-		align-self: center;
-		padding: 0.25rem 0;
-		width: 100%;
-
-		& > p {
-			&:first-child {
-				background-image: linear-gradient(
-					90deg,
-					$brand-yellow 10%,
-					$brand-orange 33.3%,
-					$brand-red 67.7%,
-					$brand-purple 90%
-				);
-				background-clip: text;
-				font-size: clamp(1rem, 14vw, 176px);
-				font-weight: 900;
-				line-height: 0.8em;
-				text-align: center;
-				-webkit-text-fill-color: transparent;
-			}
-
-			&:last-child {
-				background-image: linear-gradient(
-					90deg,
-					$brand-yellow 10%,
-					$brand-orange 33.3%,
-					$brand-red 67.7%,
-					$brand-purple 90%
-				);
-				background-clip: text;
-				font-size: clamp(1rem, 19.5vw, 245px);
-				font-weight: 900;
-				line-height: 0.8em;
-				text-align: center;
-				-webkit-text-fill-color: transparent;
-			}
+		p:first-child {
+			font-size: clamp(1rem, 14vw, 176px);
 		}
-	}
 
-	h2.hero_subhead {
-		color: $ui-primary;
-		font-size: 5vw;
-		font-size: clamp(1.25rem, 5vw, 62px);
-		font-weight: 700;
-		padding-right: 0.25em;
-		text-align: right;
-		text-transform: none;
-		width: 100%;
+		p:last-child {
+			font-size: clamp(1rem, 19.5vw, 245px);
+		}
 	}
 }
 
@@ -69,61 +83,18 @@
 	background:
 		url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
 			no-repeat,
-		url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1200px
+		url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1000px
 			no-repeat,
 		$brand-black;
 
 	h1.hero_headline {
-		align-self: center;
-		padding: 0.25rem 0;
-		width: 100%;
-
-		& > p {
-			&:first-child {
-				background-image: linear-gradient(
-					90deg,
-					$brand-yellow 10%,
-					$brand-orange 33.3%,
-					$brand-red 67.7%,
-					$brand-purple 90%
-				);
-				background-clip: text;
-				// font-size: clamp(1rem, 14vw, 176px);
-				font-size: 20vw;
-				font-weight: 900;
-				line-height: 0.8em;
-				text-align: center;
-				-webkit-text-fill-color: transparent;
-			}
-
-			&:last-child {
-				background-image: linear-gradient(
-					90deg,
-					$brand-yellow 10%,
-					$brand-orange 33.3%,
-					$brand-red 67.7%,
-					$brand-purple 90%
-				);
-				background-clip: text;
-				// font-size: clamp(1rem, 19.5vw, 245px);
-				font-size: 15vw;
-				font-weight: 900;
-				line-height: 0.8em;
-				text-align: center;
-				-webkit-text-fill-color: transparent;
-			}
+		p:first-child {
+			font-size: clamp(1rem, 20vw, 192px);
 		}
-	}
 
-	h2.hero_subhead {
-		color: $ui-primary;
-		font-size: 5vw;
-		font-size: clamp(1.25rem, 5vw, 62px);
-		font-weight: 700;
-		padding-right: 0.25em;
-		text-align: right;
-		text-transform: none;
-		width: 100%;
+		p:last-child {
+			font-size: clamp(1rem, 15vw, 144px);
+		}
 	}
 }
 
@@ -131,10 +102,10 @@
 	align-items: flex-start;
 	gap: 2rem;
 	padding: 1rem 2rem;
-	max-width: 960px;
+	max-width: 860px;
 
 	p {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 		font-weight: 200;
 	}
 }
