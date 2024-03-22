@@ -5,6 +5,7 @@ import Header from '../components/layout/header';
 import Footer from '../components/layout/footer';
 import Hero from '../components/layout/project_hero';
 import Topic from '../components/common/topic';
+import ProjectSection from '../components/layout/project_section';
 
 import { useParams } from 'react-router-dom';
 
@@ -47,19 +48,14 @@ function ProjectDetails() {
   }
 `;
 
-  console.log(query)
-
   let { data, errors } = useContentful(query);
 
   if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
   if (!data) return <span>Loading...</span>;
 
   const { projectPage } = data;
-
   const projectHero = projectPage.projectHero
   const projectSection = projectPage.projectSectionCollection.items
-
-  console.log(projectHero)
 
   return (
     <div className={styles.c_container} id='farid-portfolio'>
@@ -71,6 +67,7 @@ function ProjectDetails() {
             <Topic key={index} type={section} />
           ))}
         </section>
+        <ProjectSection />
       </main>
       <Footer />
     </div>

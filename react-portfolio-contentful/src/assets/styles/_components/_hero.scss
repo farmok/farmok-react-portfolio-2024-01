@@ -101,12 +101,32 @@
 .c_introduction {
 	align-items: flex-start;
 	gap: 2rem;
-	padding: 1rem 2rem;
+	padding: 1rem 1.5rem;
 	max-width: 860px;
+	width: 100%;
+
+	h4 {
+		align-self: start;
+		color: #fdfaf0;
+		font-size: 1.75rem;
+		font-weight: 900;
+		line-height: 1em;
+		margin-top: 2rem;
+		text-transform: uppercase;
+		width: 100%;
+	}
 
 	p {
 		font-size: 1.5rem;
 		font-weight: 200;
+	}
+
+	ul {
+		padding: 0 1rem;
+	}
+
+	li p {
+		font-size: 1.25rem;
 	}
 }
 

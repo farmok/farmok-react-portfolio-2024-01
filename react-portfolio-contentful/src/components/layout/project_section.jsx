@@ -1,17 +1,45 @@
 /* eslint-disable react/prop-types */
 import styles from '../../assets/styles/main.module.scss';
-
-// import { useState, useEffect } from 'react';
+import useContentful from '../../hooks/use_contentful';
 
 import { Link } from 'react-router-dom';
 
-function ProjectSection({ data }) {
+const query = `query{
+  projectPageCollection{
+    items{
+      sys{
+        id
+      }
+      orderNumber
+      projectCard{
+        projectThumbnail{
+          url
+          title
+        }
+        projectTag
+        projectTitle
+        projectSubtitle
+      }
+    }
+  }
+}
+`;
 
-    const projectList = data.sort((a, b) => (a.orderNumber - b.orderNumber));
-    console.log(projectList);
+function ProjectSection() {
+
+
+    let { data, errors } = useContentful(query);
+
+    if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
+    if (!data) return <span>Loading...</span>;
+
+    const projectCollection = data;
+
+    const projects = projectCollection.projectPageCollection.items
+    const projectList = projects.sort((a, b) => (a.orderNumber - b.orderNumber));
 
     return (
-        <section className={styles.c_body}>
+        <section className={styles.c_body} data-type='project list'>
             <h3 className={styles.section_title}>Project Spotlight</h3>
             <ul className={styles.project_list}>
                 {projectList.map((project) => (

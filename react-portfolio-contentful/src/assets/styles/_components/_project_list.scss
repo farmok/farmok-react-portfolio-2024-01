@@ -1,44 +1,39 @@
-*[data-page-template='landing page'],
-*[data-page-theme='home'] {
-    gap: 6rem;
+.c_main > .c_body[data-type='project list'] {
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 960px;
 
-    .c_body {
-        align-items: flex-start;
-        gap: 1rem;
+    .section_title {
+        align-self: start;
+        color: $brand-white;
+        font-size: 2.25rem;
+        font-weight: 900;
+        line-height: 1.3em;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    .project_list {
+        align-content: space-between;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem 1rem;
         max-width: 960px;
+        width: 100%;
 
-        .section_title {
-            align-self: start;
-            color: $brand-white;
-            font-size: 2.25rem;
-            font-weight: 900;
-            line-height: 1.3em;
-            text-transform: uppercase;
-            width: 100%;
-        }
-
-        .project_list {
-            align-content: space-between;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 2rem 1rem;
-            max-width: 960px;
+        &__item {
+            border-radius: 1rem;
+            display: block;
+            min-width: 160px;
             width: 100%;
 
-            &__item {
-                border-radius: 1rem;
-                display: block;
-                min-width: 160px;
-                width: 100%;
+            @media screen and (min-width: $screen-xs) {
+                width: 48%;
+            }
 
-                @media screen and (min-width: $screen-xs) {
-                    width: 48%;
-                }
-
-                @media screen and (min-width: $screen-md) {
-                    width: 23%;
-                }
+            @media screen and (min-width: $screen-md) {
+                width: 23%;
             }
         }
     }

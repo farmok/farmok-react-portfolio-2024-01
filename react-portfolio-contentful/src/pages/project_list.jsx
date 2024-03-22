@@ -12,6 +12,7 @@ const query = `query{
       sys{
         id
       }
+      orderNumber
       projectCard{
         projectThumbnail{
           url
@@ -31,13 +32,10 @@ function ProjectList() {
     if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
     if (!data) return <span>Loading...</span>;
 
-    const projectList = data;
+    const projectCollection = data;
 
-    console.log(projectList)
-
-    const projects = projectList.projectPageCollection.items
-
-    console.log(projects)
+    const projects = projectCollection.projectPageCollection.items
+    const projectList = projects.sort((a, b) => (a.orderNumber - b.orderNumber));
 
     return (
         <div className={styles.c_container} id='farid-portfolio'>
@@ -50,7 +48,7 @@ function ProjectList() {
                 </section>
                 <section className={styles.c_body}>
                     <ul className={styles.project_list}>
-                        {projects.map((project, index) => (
+                        {projectList.map((project, index) => (
                             <li key={index} className={styles.project_list__item}>
                                 <Link to={`/project_detail/${project.sys.id}`} className={styles.c_card} data-role={project.projectCard.projectTag}>
                                     <img className={styles.card_image} src={project.projectCard.projectThumbnail.url} alt="" />

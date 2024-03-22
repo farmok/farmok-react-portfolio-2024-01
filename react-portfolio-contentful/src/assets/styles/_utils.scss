@@ -10,7 +10,7 @@ $brand-black: #01013c;
 
 $ui-primary: $brand-yellow;
 $ui-secondary: $brand-orange;
-$ui-text-light: $brand-white;
+$ui-text-light: scale-color($brand-white, $alpha: -20%);
 $ui-text-dark: $brand-black;
 $ui-background: $brand-black;
 

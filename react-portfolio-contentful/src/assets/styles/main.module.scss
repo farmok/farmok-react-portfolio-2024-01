@@ -1,6 +1,9 @@
 @import './utils';
 @import './base';
 @import './layout';
+@import './_pages/home';
+@import './_pages/project';
+@import './_pages/project_list';
 @import './_components/navigation';
 @import './_components/header';
 @import './_components/footer';
@@ -8,6 +11,4 @@
 @import './_components/topic';
 @import './_components/card';
 @import './_components/project_list';
-@import './_pages/project';
-@import './_pages/project_list';
 @import './helper';
