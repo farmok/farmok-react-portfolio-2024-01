@@ -1,5 +1,6 @@
-import styles from '../../assets/styles/main.module.scss';
 import Navigation from '../common/navigation';
+
+import styles from '../../assets/styles/main.module.scss';
 
 function Header() {
     return (

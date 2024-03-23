@@ -34,33 +34,26 @@ function ProjectCarousel({ title, pageID }) {
   if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
   if (!data) return <span>Loading...</span>;
 
-
   const projectCollection = data;
   const projects = projectCollection.projectPageCollection.items
   const projectList = projects.sort((a, b) => (a.orderNumber - b.orderNumber));
+
+  if (pageID == undefined) { pageID = 'null' }
 
   return (
     <section className={styles.c_body} data-type='project list'>
       <h3 className={styles.section_title}>{title}</h3>
       <ul className={styles.project_list}>
-        {/* {projectList.map((project) => {
+        {projectList.map((project) => {
 
-          console.log(pageID.id)
-          console.log(project.sys.id)
-
-          {
-            project.sys.id !== pageID.id &&
-              <li key={project.orderNumber} className={styles.project_list__item}>
+          if (project.sys.id !== pageID.id) {
+            return (
+              <li key={project.sys.id} className={styles.project_list__item}>
                 <Card template={project} />
-              </li>
+              </li>)
           }
         }
-        )} */}
-        {projectList.map((project) => (
-          <li key={project.orderNumber} className={styles.project_list__item}>
-            <Card template={project} />
-          </li>
-        ))}
+        )}
       </ul>
     </section>
   );

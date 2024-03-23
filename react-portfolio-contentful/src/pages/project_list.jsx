@@ -1,10 +1,10 @@
 import useContentful from '../hooks/use_contentful';
 
-import styles from '../assets/styles/main.module.scss';
 import Header from '../components/layout/header';
+import Card from '../components/common/card';
 import Footer from '../components/layout/footer';
 
-import { Link } from 'react-router-dom';
+import styles from '../assets/styles/main.module.scss';
 
 const query = `query{
   projectPageCollection{
@@ -49,14 +49,7 @@ function ProjectList() {
                     <ul className={styles.project_list}>
                         {projectList.map((project, index) => (
                             <li key={index} className={styles.project_list__item}>
-                                <Link to={`/project_detail/${project.sys.id}`} className={styles.c_card} data-role={project.projectCard.projectTag}>
-                                    <img className={styles.card_image} src={project.projectCard.projectThumbnail.url} alt="" />
-                                    <div className={styles.card_label}>
-                                        <h4>{project.projectCard.projectTitle}</h4>
-                                        <p>{project.projectCard.projectSubtitle}</p>
-                                    </div>
-                                    <p className={styles.card_cta}>Explore</p>
-                                </Link>
+                                <Card template={project} />
                             </li>
                         ))}
                     </ul>
