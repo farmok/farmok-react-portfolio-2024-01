@@ -23,22 +23,37 @@ const INTRO_RICHTEXT_OPTIONS = {
     }
 }
 
+function Hero({ template }) {
+    const sectionHero = template.sectionTitle;
 
-function Hero({ type }) {
+    let heroContent;
 
-    console.log(type)
+    if (sectionHero) {
+        heroContent =
+            <div className={styles.c_hero}>
+                <div className={styles.c_container}>
+                    <h2 className={styles.hero_headline}>{template.sectionHero.heroHeadline}</h2>
+                    <p className={styles.hero_subhead}>{template.sectionHero.heroSubHeadline}</p>
+                </div>
+            </div>
+    } else {
+        heroContent =
+            <section className={styles.c_hero}>
+                <h1 className={styles.hero_headline}>
+                    {documentToReactComponents(template.heroHeadline.json, HERO_RICHTEXT_OPTIONS)}
+                </h1>
+                <h2 className={styles.hero_subhead}>{template.heroSubHeadline}</h2>
+            </section>
+    }
 
     return (
         <>
-            <section className={styles.c_hero}>
-                <h1 className={styles.hero_headline}>
-                    {documentToReactComponents(type.heroHeadline.json, HERO_RICHTEXT_OPTIONS)}
-                </h1>
-                <h2 className={styles.hero_subhead}>{type.heroSubHeadline}</h2>
-            </section>
-            <section className={styles.c_introduction}>
-                {documentToReactComponents(type.introduction.json, INTRO_RICHTEXT_OPTIONS)}
-            </section>
+            {heroContent}
+            {template.introduction &&
+                <section className={styles.c_introduction}>
+                    {documentToReactComponents(template.introduction.json, INTRO_RICHTEXT_OPTIONS)}
+                </section>
+            }
         </>
     );
 }

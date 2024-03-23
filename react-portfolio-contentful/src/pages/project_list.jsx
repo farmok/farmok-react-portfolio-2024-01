@@ -33,7 +33,6 @@ function ProjectList() {
     if (!data) return <span>Loading...</span>;
 
     const projectCollection = data;
-
     const projects = projectCollection.projectPageCollection.items
     const projectList = projects.sort((a, b) => (a.orderNumber - b.orderNumber));
 

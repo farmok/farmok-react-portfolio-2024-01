@@ -1,14 +1,20 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
+
 import styles from '../../assets/styles/main.module.scss';
 
-export const Card = ({ template, URL, category, image, image_alt, title, subtitle }) => {
+function Card({ template }) {
+
     return (
-        <a href={URL} className={styles.c_card} data-role={category} data-template={template}>
-            <img className={styles.card_image} src={image} alt={image_alt} />
-            <div className={styles.card_content}>
-                <h4 className={styles.card_title}>{title}</h4>
-                <p className={styles.card_subtitle}>{subtitle}</p>
+        <Link to={`/project_detail/${template.sys.id}`} className={styles.c_card} data-role={template.projectCard.projectTag}>
+            <img className={styles.card_image} src={template.projectCard.projectThumbnail.url} alt="" />
+            <div className={styles.card_label}>
+                <h4>{template.projectCard.projectTitle}</h4>
+                <p>{template.projectCard.projectSubtitle}</p>
             </div>
-        </a>
+            <p className={styles.card_cta}>Explore</p>
+        </Link>
     );
-};
+}
+
+export default Card;

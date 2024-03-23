@@ -15,22 +15,21 @@ const RICHTEXT_OPTIONS = {
     }
 }
 
-function Topic({ type }) {
-    console.log(type)
+function Article({ content }) {
     return (
         <article className={styles.c_topic}>
             <div className={styles.topic_content}>
-                <h3 className={styles.topic_title}>{type.topicTitle}</h3>
+                <h3 className={styles.topic_title}>{content.topicTitle}</h3>
                 <div className={styles.topic_body}>
-                    {documentToReactComponents(type.topicBody.json, RICHTEXT_OPTIONS)}
+                    {documentToReactComponents(content.topicBody.json, RICHTEXT_OPTIONS)}
                 </div>
             </div>
             <div className={styles.topic_media}>
-                <figure className={styles.images_100}><img src={type.topicImage01.url} alt={type.topicImage01.title} /><figcaption className={styles.topic_image__caption}>{type.topicImage01.description}</figcaption></figure>
-                {type.topicImage02 && <figure className={styles.images_100}><img src={type.topicImage02.url} alt={type.topicImage02.title} /><figcaption className={styles.topic_image__caption}>{type.topicImage02.description}</figcaption></figure>}
+                <figure className={styles.images_100}><img src={content.topicImage01.url} alt={content.topicImage01.title} /><figcaption className={styles.topic_image__caption}>{content.topicImage01.description}</figcaption></figure>
+                {content.topicImage02 && <figure className={styles.images_100}><img src={content.topicImage02.url} alt={content.topicImage02.title} /><figcaption className={styles.topic_image__caption}>{content.topicImage02.description}</figcaption></figure>}
             </div>
         </article >
     );
 }
 
-export default Topic;
+export default Article;
