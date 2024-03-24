@@ -11,26 +11,15 @@ import styles from '../assets/styles/main.module.scss';
 const query = `query{
   landingPage(id: "5hkVcf0Mo383BUmgvW22Gy")
   {
+
     pageHero {
-      __typename
-      ... on LandingPageHero {
-        heroHeadline{
-          json
-        }
-        heroSubHeadline
-        introduction{
-          json
-        }
+      heroTemplate
+      title{
+        json
       }
-      ... on LandingPageTitle {
-        pageTitle
-        landingPageTags
-        document{
-          url
-        }
-        introduction{
-          json
-        }
+      subTitle
+      introduction{
+        json
       }
     }
 
@@ -39,21 +28,23 @@ const query = `query{
         __typename
         ... on LandingPageSection{
           sectionHero{
-            heroHeadline
-            heroSubHeadline
+            title{
+        json
+      }
+      subTitle
           }
           sectionTopicCollection(limit:5){
             items{
-              topicTitle
-              topicBody{
+              contentTitle
+              contentBody{
                 json
               }
-              topicImage01{
+              contentImage01{
                 url
                 description
                 title
               }
-              topicImage02{
+              contentImage02{
                 url
                 description
                 title
@@ -61,7 +52,7 @@ const query = `query{
             }
           }
         }
-        ... on JobHistorySection{
+        ... on JobContentBlock{
           jobTitle
           employer
           dates
