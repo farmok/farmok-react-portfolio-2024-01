@@ -11,38 +11,62 @@ import styles from '../assets/styles/main.module.scss';
 const query = `query{
   landingPage(id: "5hkVcf0Mo383BUmgvW22Gy")
   {
-    landingPageHero{
-      heroHeadline{
-        json
+    pageHero {
+      __typename
+      ... on LandingPageHero {
+        heroHeadline{
+          json
+        }
+        heroSubHeadline
+        introduction{
+          json
+        }
       }
-      heroSubHeadline
-      introduction{
-        json
+      ... on LandingPageTitle {
+        pageTitle
+        landingPageTags
+        document{
+          url
+        }
+        introduction{
+          json
+        }
       }
     }
-    landingPageSectionCollection(limit:10){
+
+    pageSectionCollection(limit:10){
       items{
-        sectionTitle
-        sectionHero{
-          heroHeadline
-          heroSubHeadline
+        __typename
+        ... on LandingPageSection{
+          sectionHero{
+            heroHeadline
+            heroSubHeadline
+          }
+          sectionTopicCollection(limit:5){
+            items{
+              topicTitle
+              topicBody{
+                json
+              }
+              topicImage01{
+                url
+                description
+                title
+              }
+              topicImage02{
+                url
+                description
+                title
+              }
+            }
+          }
         }
-        sectionTopicCollection(limit:10){
-          items{
-            topicTitle
-            topicBody{
-              json
-            }
-            topicImage01{
-              url
-              title
-              description
-            }
-            topicImage02{
-              url
-              title
-              description
-            }
+        ... on JobHistorySection{
+          jobTitle
+          employer
+          dates
+          summary{
+            json
           }
         }
       }
@@ -59,8 +83,10 @@ function Home() {
   if (!data) return <span>Loading...</span>;
 
   const { landingPage } = data
-  const pageHero = landingPage.landingPageHero
-  const pageSection = landingPage.landingPageSectionCollection.items
+  const pageHero = landingPage.pageHero
+  const pageSection = landingPage.pageSectionCollection.items
+
+  console.log(pageHero)
 
   return (
     <div className={styles.c_container} id='farid-portfolio'>

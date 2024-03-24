@@ -19,6 +19,15 @@ const INTRO_RICHTEXT_OPTIONS = {
     renderNode: {
         [BLOCKS.PARAGRAPH]: (node, childern) => {
             return <p>{childern}</p>
+        },
+        [BLOCKS.UL_LIST]: (node, childern) => {
+            return <ul>{childern}</ul>
+        },
+        [BLOCKS.OL_LIST]: (node, childern) => {
+            return <ol>{childern}</ol>
+        },
+        [BLOCKS.LIST_ITEM]: (node, childern) => {
+            return <li>{childern}</li>
         }
     }
 }

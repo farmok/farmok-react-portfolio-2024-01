@@ -9,6 +9,15 @@ const RICHTEXT_OPTIONS = {
         [BLOCKS.PARAGRAPH]: (node, childern) => {
             return <p>{childern}</p>
         },
+        [BLOCKS.UL_LIST]: (node, childern) => {
+            return <ul>{childern}</ul>
+        },
+        [BLOCKS.OL_LIST]: (node, childern) => {
+            return <ol>{childern}</ol>
+        },
+        [BLOCKS.LIST_ITEM]: (node, childern) => {
+            return <li>{childern}</li>
+        },
         [INLINES.HYPERLINK]: (node, children) => {
             return <a href={node.data.uri}>{children}</a>
         }
