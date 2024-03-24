@@ -49,9 +49,9 @@ function Hero({ template }) {
         heroContent =
             <section className={styles.c_hero}>
                 <h1 className={styles.hero_headline}>
-                    {documentToReactComponents(template.heroHeadline.json, HERO_RICHTEXT_OPTIONS)}
+                    {documentToReactComponents(template.title.json, HERO_RICHTEXT_OPTIONS)}
                 </h1>
-                <h2 className={styles.hero_subhead}>{template.heroSubHeadline}</h2>
+                <h2 className={styles.hero_subhead}>{template.subTitle}</h2>
             </section>
     }
 

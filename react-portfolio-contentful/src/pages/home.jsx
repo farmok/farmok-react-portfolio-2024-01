@@ -9,9 +9,7 @@ import Footer from '../components/layout/footer';
 import styles from '../assets/styles/main.module.scss';
 
 const query = `query{
-  landingPage(id: "5hkVcf0Mo383BUmgvW22Gy")
-  {
-
+  landingPage(id: "5hkVcf0Mo383BUmgvW22Gy"){
     pageHero {
       heroTemplate
       title{
@@ -29,8 +27,8 @@ const query = `query{
         ... on LandingPageSection{
           sectionHero{
             title{
-        json
-      }
+                json
+              }
       subTitle
           }
           sectionTopicCollection(limit:5){
