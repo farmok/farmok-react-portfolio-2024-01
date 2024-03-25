@@ -1,8 +1,8 @@
 import useContentful from '../hooks/use_contentful';
 
 import Header from '../components/layout/header';
-import { PageHero, SectionHero } from '../components/layout/page_hero';
-import Article from '../components/common/article';
+import { PageHero, SectionHero } from '../components/layout/hero';
+import { PageContent } from '../components/common/article';
 import Footer from '../components/layout/footer';
 
 import styles from '../assets/styles/main.module.scss';
@@ -64,20 +64,20 @@ function Leadership() {
     if (!data) return <span>Loading...</span>;
 
     const { landingPage } = data;
-    const pageHero = landingPage.pageHero
-    const pageSection = landingPage.pageSectionCollection.items
+    const hero = landingPage.pageHero
+    const sections = landingPage.pageSectionCollection.items
 
     return (
         <div className={styles.c_container} id='farid-portfolio'>
             <Header />
             <main className={styles.c_main} data-page-template="landing page" data-page-theme="leadership" >
-                <PageHero template={pageHero} />
-                {pageSection.map((section) => (
+                <PageHero content={hero} />
+                {sections.map((section) => (
                     <section key={section.sectionTitle} className={styles.c_section} data-section-name={section.sectionTitle}>
-                        <SectionHero template={section} />
+                        <SectionHero content={section} />
                         <div className={styles.c_body}>
                             {section.sectionTopicCollection.items.map((topic) => (
-                                <Article key={topic.contentTitle} content={topic} />
+                                <PageContent key={topic.contentTitle} content={topic} />
                             ))}
                         </div>
                     </section>

@@ -1,6 +1,7 @@
 import useContentful from '../hooks/use_contentful';
 
 import Header from '../components/layout/header';
+import { PageTitle } from '../components/layout/hero';
 import Card from '../components/common/card';
 import Footer from '../components/layout/footer';
 
@@ -34,21 +35,22 @@ function ProjectList() {
 
     const projectCollection = data;
     const projects = projectCollection.projectPageCollection.items
-    const projectList = projects.sort((a, b) => (a.orderNumber - b.orderNumber));
+    const sortedProjects = projects.sort((a, b) => (a.projectCard.orderNumber - b.projectCard.orderNumber));
 
     return (
         <div className={styles.c_container} id='farid-portfolio'>
             <Header />
             <main className={styles.c_main} data-page-template='project'>
-                <section className={styles.c_hero}>
+                <PageTitle title={'Collection of Projects'} />
+                {/* <section className={styles.c_hero}>
                     <div className={styles.c_title}>
                         <h1 className={styles.project_title}>Collection of Projects</h1>
                     </div>
-                </section>
+                </section> */}
                 <section className={styles.c_body}>
                     <ul className={styles.project_list}>
-                        {projectList.map((project) => (
-                            <li key={project.projectCard.orderNumber} className={styles.project_list__item}>
+                        {sortedProjects.map((project) => (
+                            <li key={project.sys.id} className={styles.project_list__item}>
                                 <Card template={project} />
                             </li>
                         ))}

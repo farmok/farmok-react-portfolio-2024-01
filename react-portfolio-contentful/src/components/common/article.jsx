@@ -24,7 +24,7 @@ const RICHTEXT_OPTIONS = {
     }
 }
 
-function Article({ content }) {
+function PageContent({ content }) {
     return (
         <article className={styles.c_topic}>
             <div className={styles.topic_content}>
@@ -41,4 +41,36 @@ function Article({ content }) {
     );
 }
 
-export default Article;
+function ProjectContent({ content }) {
+    return (
+        <article className={styles.c_topic}>
+            <div className={styles.topic_content}>
+                <h3 className={styles.topic_title}>{content.contentTitle}</h3>
+                <div className={styles.topic_body}>
+                    {documentToReactComponents(content.contentBody.json, RICHTEXT_OPTIONS)}
+                </div>
+            </div>
+            <div className={styles.topic_media}>
+                <figure className={styles.images_100}><img src={content.contentImage01.url} alt={content.contentImage01.title} /><figcaption className={styles.topic_image__caption}>{content.contentImage01.description}</figcaption></figure>
+                {content.contentImage02 && <figure className={styles.images_100}><img src={content.contentImage02.url} alt={content.contentImage02.title} /><figcaption className={styles.topic_image__caption}>{content.contentImage02.description}</figcaption></figure>}
+            </div>
+        </article >
+    );
+}
+
+function JobContent({ content }) {
+    return (
+        <article key={content.jobTitle} className={styles.c_topic}>
+            <div className={styles.topic_content}>
+                <h3 className={styles.topic_title}>{content.jobTitle}</h3>
+                <h4 className={styles.topic_title}>{content.employer}</h4>
+                <h5 className={styles.topic_title}>{content.dates}</h5>
+                <div className={styles.topic_body}>
+                    {documentToReactComponents(content.summary.json, RICHTEXT_OPTIONS)}
+                </div>
+            </div>
+        </article >
+    );
+}
+
+export { PageContent, ProjectContent, JobContent, }

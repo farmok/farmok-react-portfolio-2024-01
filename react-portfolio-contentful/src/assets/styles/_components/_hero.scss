@@ -1,136 +1,15 @@
-*[data-page-template='landing page'] > .c_hero {
-	height: 80vh;
-	justify-content: center;
-	max-width: 1200px;
-	min-height: 1200px;
-
-	h1.hero_headline {
-		align-self: center;
-		padding: 0.25rem 0;
-		width: 100%;
-
-		& > p {
-			&:first-child {
-				background-image: linear-gradient(
-					90deg,
-					$brand-white 10%,
-					$brand-yellow 20%,
-					$brand-orange 35%,
-					$brand-red 50%,
-					$brand-purple 65%,
-					$brand-violet 80%,
-					$brand-black 90%
-				);
-				background-clip: text;
-				font-weight: 900;
-				line-height: 0.8em;
-				text-align: center;
-				-webkit-text-fill-color: transparent;
-			}
-
-			&:last-child {
-				background-image: linear-gradient(
-					90deg,
-					$brand-white 10%,
-					$brand-yellow 20%,
-					$brand-orange 35%,
-					$brand-red 50%,
-					$brand-purple 65%,
-					$brand-violet 80%,
-					$brand-black 90%
-				);
-				background-clip: text;
-				font-weight: 900;
-				line-height: 0.8em;
-				text-align: center;
-				-webkit-text-fill-color: transparent;
-			}
-		}
-	}
-
-	h2.hero_subhead {
-		color: $ui-primary;
-		font-size: 5vw;
-		font-size: clamp(1.25rem, 5vw, 62px);
-		font-weight: 700;
-		padding-right: 0.25em;
-		text-align: right;
-		text-transform: none;
-		width: 100%;
-	}
-}
-
-*[data-page-theme='leadership'] > .c_hero {
-	background:
-		url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
-			no-repeat,
-		url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1200px
-			no-repeat,
-		$brand-black;
-
-	h1.hero_headline {
-		p:first-child {
-			font-size: clamp(1rem, 14vw, 176px);
-		}
-
-		p:last-child {
-			font-size: clamp(1rem, 19.5vw, 245px);
-		}
-	}
-}
-
-*[data-page-theme='home'] > .c_hero {
-	background:
-		url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
-			no-repeat,
-		url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1000px
-			no-repeat,
-		$brand-black;
-
-	h1.hero_headline {
-		p:first-child {
-			font-size: clamp(1rem, 20vw, 192px);
-		}
-
-		p:last-child {
-			font-size: clamp(1rem, 15vw, 144px);
-		}
-	}
-}
-
-.c_introduction {
-	align-items: flex-start;
-	gap: 2rem;
-	padding: 1rem 1.5rem;
-	max-width: 860px;
-	width: 100%;
-
-	h4 {
-		align-self: start;
-		color: #fdfaf0;
-		font-size: 1.75rem;
-		font-weight: 900;
-		line-height: 1em;
-		margin-top: 2rem;
-		text-transform: uppercase;
-		width: 100%;
-	}
-
-	p {
-		font-size: 1.5rem;
-		font-weight: 200;
-	}
-
-	ul {
-		padding: 0 1rem;
-	}
-
-	li p {
-		font-size: 1.25rem;
-	}
-}
+// .c_hero[data-template='Landing Page']
+// .c_hero[data-template='Landing Page Section']
+// .c_hero[data-template='Project List Page']
+// .c_hero[data-template='Project Detail Page']
+// .c_hero[data-template='About Page']
 
 .c_hero {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 	img {
 		border-radius: 1rem;
 		width: 100%;
@@ -144,44 +23,47 @@
 		padding: 1rem 0.5rem;
 		text-align: left;
 
-		h1.project_title {
+		h1.hero_title,
+		h1.hero_title p {
 			background-image: linear-gradient(
-				8370deg,
-				rgb(252, 252, 244) 0%,
-				rgb(255, 201, 89) 24.9582%,
-				rgb(245, 126, 84) 50.5208%,
-				rgb(207, 72, 105) 75%,
-				rgb(102, 27, 118) 114.653%
+				90deg,
+				$brand-white 10%,
+				$brand-yellow 20%,
+				$brand-orange 35%,
+				$brand-red 50%,
+				$brand-purple 65%,
+				$brand-violet 80%
 			);
 			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		h1.hero_title {
 			font-size: 2rem;
 			line-height: 100%;
-			-webkit-text-fill-color: transparent;
 
 			@media screen and (min-width: 620px) {
 				font-size: 3rem;
 			}
 		}
 
-		h2.project_subtitle {
-			background-image: linear-gradient(0deg, $ui-text-light, $ui-text-light);
-			background-clip: text;
+		h2.hero_subtitle {
 			display: block;
 			font-size: 1.25rem;
 			font-weight: 700;
 			line-height: 120%;
 			text-transform: none;
-			-webkit-text-fill-color: transparent;
 
 			@media screen and (min-width: 620px) {
 				font-size: 2rem;
 			}
 		}
 
-		.project_ {
+		.page_ {
 			&tag__list {
 				display: flex;
 				flex-direction: row;
+				flex-wrap: wrap;
 				gap: 1rem;
 				margin-top: 1rem;
 			}
@@ -198,82 +80,216 @@
 	}
 }
 
-.c_section > .c_hero {
-	justify-content: center;
-	max-width: 960px;
-	min-height: 100vh;
+.c_introduction {
+	align-items: flex-start;
+	font-size: 1rem;
+	font-weight: 300;
+	gap: 2rem;
+	padding: 2rem 1.5rem 1rem;
+	max-width: 920px;
 
-	&:before {
-		content: '';
-		position: absolute;
-		min-height: 65vh;
+	h4 {
+		font-size: 1.5em;
+		font-weight: 900;
+		line-height: 1em;
+		text-transform: uppercase;
+
+		b {
+			font-weight: 900;
+		}
+	}
+
+	p b {
+		font-weight: 500;
+	}
+
+	ul {
+		padding: 0 1rem;
+	}
+}
+
+.c_hero[data-template='Landing Page'] {
+	height: 80vh;
+	max-width: 1200px;
+	min-height: 1200px;
+
+	.c_title {
+		align-items: center;
+		max-width: 1200px;
+	}
+
+	h1.hero_title {
+		padding: 0.25rem 0;
 		width: 100%;
-		z-index: -1;
+
+		& > p {
+			background-image: linear-gradient(
+				90deg,
+				$brand-white 10%,
+				$brand-yellow 20%,
+				$brand-orange 35%,
+				$brand-red 50%,
+				$brand-purple 65%,
+				$brand-violet 80%,
+				$brand-black 90%
+			);
+			text-align: center;
+
+			&:first-child {
+				font-weight: 900;
+				line-height: 0.8em;
+			}
+
+			&:last-child {
+				font-weight: 900;
+				line-height: 0.8em;
+			}
+		}
 	}
 
-	h2.hero_headline {
-		align-self: center;
-		font-size: clamp(1rem, 10.5vw, 100px);
-		line-height: 0.9;
-		padding: 1rem 0;
-		text-align: center;
-	}
-
-	.hero_subhead {
-		font-size: clamp(1.25rem, 4.5vw, 24px);
-		font-weight: 400;
-		padding: 0 0.5rem;
-		text-align: center;
+	h2.hero_subtitle {
+		color: $ui-primary;
+		font-size: 5vw;
+		font-size: clamp(1.25rem, 5vw, 62px);
+		font-weight: 700;
+		padding-right: 0.25em;
+		text-align: right;
+		text-transform: none;
 		width: 100%;
 	}
 }
 
-.c_section[data-section-name='Cultivate Relationships'] > .c_hero:before {
-	background:
-		$c-hero-background,
-		url(https://ucarecdn.com/80e2064d-b932-4823-9ade-fc4f9d9d40a6/-/preview/1200x1200/) center center / contain
-			no-repeat,
-		url(https://ucarecdn.com/f9259c13-e9cb-4e15-a3f8-2a3f4bb13ca7/-/preview/1200x1200/) center bottom / contain
-			no-repeat,
-		$brand-black;
+.c_hero[data-template='Project List Page'],
+.c_hero[data-template='About Page'] {
+	margin-top: 75px;
 }
 
-.c_section[data-section-name='Prioritizing Rigorously'] > .c_hero:before {
-	background:
-		$c-hero-background,
-		url(https://ucarecdn.com/9d17c298-b345-4804-9ac5-bf0adb033d4c/-/preview/1200x1200/) center center / contain
-			no-repeat,
-		url(https://ucarecdn.com/1331cb12-a9f1-4556-a80f-2468263b4807/-/preview/1200x1200/) center center / contain
-			no-repeat,
-		$brand-black;
+*[data-page-theme='home'] {
+	> .c_hero {
+		background:
+			url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
+				no-repeat,
+			url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1000px
+				no-repeat,
+			$brand-black;
+
+		h1.hero_title {
+			p:first-child {
+				font-size: clamp(1rem, 20vw, 192px);
+			}
+
+			p:last-child {
+				font-size: clamp(1rem, 15vw, 144px);
+			}
+		}
+	}
+
+	.c_introduction {
+		font-size: clamp(1.15rem, 3vw, 24px);
+	}
 }
 
-.c_section[data-section-name='Unleash Curiosity'] > .c_hero:before {
-	background:
-		$c-hero-background,
-		url(https://ucarecdn.com/60dcc811-a635-488a-a447-058962a6eb29/-/preview/1200x1200/) center bottom / contain
-			no-repeat,
-		url(https://ucarecdn.com/10bdec2b-6a50-40e7-a292-2e00fc84bcc3/-/preview/1200x1200/) center bottom / contain
-			no-repeat,
-		$brand-black;
+*[data-page-theme='leadership'] {
+	> .c_hero {
+		background:
+			url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
+				no-repeat,
+			url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1200px
+				no-repeat,
+			$brand-black;
+
+		h1.hero_title {
+			p:first-child {
+				font-size: clamp(1rem, 14vw, 176px);
+			}
+
+			p:last-child {
+				font-size: clamp(1rem, 19.5vw, 245px);
+			}
+		}
+	}
+	.c_introduction {
+		font-size: clamp(1.15rem, 3vw, 24px);
+	}
 }
 
-.c_section[data-section-name='Embracing Systems'] > .c_hero:before {
-	background:
-		$c-hero-background,
-		url(https://ucarecdn.com/6cd04403-2789-4d99-bd0f-4c216d0a2258/-/preview/1200x1200/) center center / contain
-			no-repeat,
-		url(https://ucarecdn.com/275e7b89-49b1-43a1-ae82-7c4883c95b79/-/preview/1200x1200/) center center / contain
-			no-repeat,
-		$brand-black;
-}
+.c_section {
+	.c_hero {
+		max-width: 960px;
+		min-height: 100vh;
 
-.c_section[data-section-name='Pragmatic Scaling'] > .c_hero:before {
-	background:
-		$c-hero-background,
-		url(https://ucarecdn.com/9a6d966d-a693-464c-9db7-6f82da4ca04e/-/preview/1200x1200/) center center / contain
-			no-repeat,
-		url(https://ucarecdn.com/92da340c-ddc8-4db5-a42d-6fe9afe3de98/-/preview/1200x1200/) center center / contain
-			no-repeat,
-		$brand-black;
+		&:before {
+			content: '';
+			position: absolute;
+			min-height: 65vh;
+			width: 100%;
+			z-index: -1;
+		}
+
+		h2.hero_title {
+			align-self: center;
+			font-size: clamp(1rem, 10.5vw, 100px);
+			line-height: 0.9;
+			padding: 1rem 0;
+			text-align: center;
+		}
+
+		.hero_subtitle {
+			font-size: clamp(1.25rem, 4.5vw, 24px);
+			font-weight: 300;
+			padding: 0 0.5rem;
+			text-align: center;
+			width: 100%;
+		}
+	}
+
+	&[data-section-name='Cultivate Relationships'] .c_hero:before {
+		background:
+			$c-hero-background,
+			url(https://ucarecdn.com/80e2064d-b932-4823-9ade-fc4f9d9d40a6/-/preview/1200x1200/) center center / contain
+				no-repeat,
+			url(https://ucarecdn.com/f9259c13-e9cb-4e15-a3f8-2a3f4bb13ca7/-/preview/1200x1200/) center bottom / contain
+				no-repeat,
+			$brand-black;
+	}
+
+	&[data-section-name='Prioritizing Rigorously'] .c_hero:before {
+		background:
+			$c-hero-background,
+			url(https://ucarecdn.com/9d17c298-b345-4804-9ac5-bf0adb033d4c/-/preview/1200x1200/) center center / contain
+				no-repeat,
+			url(https://ucarecdn.com/1331cb12-a9f1-4556-a80f-2468263b4807/-/preview/1200x1200/) center center / contain
+				no-repeat,
+			$brand-black;
+	}
+
+	&[data-section-name='Unleash Curiosity'] .c_hero:before {
+		background:
+			$c-hero-background,
+			url(https://ucarecdn.com/60dcc811-a635-488a-a447-058962a6eb29/-/preview/1200x1200/) center bottom / contain
+				no-repeat,
+			url(https://ucarecdn.com/10bdec2b-6a50-40e7-a292-2e00fc84bcc3/-/preview/1200x1200/) center bottom / contain
+				no-repeat,
+			$brand-black;
+	}
+
+	&[data-section-name='Embracing Systems'] .c_hero:before {
+		background:
+			$c-hero-background,
+			url(https://ucarecdn.com/6cd04403-2789-4d99-bd0f-4c216d0a2258/-/preview/1200x1200/) center center / contain
+				no-repeat,
+			url(https://ucarecdn.com/275e7b89-49b1-43a1-ae82-7c4883c95b79/-/preview/1200x1200/) center center / contain
+				no-repeat,
+			$brand-black;
+	}
+
+	&[data-section-name='Pragmatic Scaling'] .c_hero:before {
+		background:
+			$c-hero-background,
+			url(https://ucarecdn.com/9a6d966d-a693-464c-9db7-6f82da4ca04e/-/preview/1200x1200/) center center / contain
+				no-repeat,
+			url(https://ucarecdn.com/92da340c-ddc8-4db5-a42d-6fe9afe3de98/-/preview/1200x1200/) center center / contain
+				no-repeat,
+			$brand-black;
+	}
 }

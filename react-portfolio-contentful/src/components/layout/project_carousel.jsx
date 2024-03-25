@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// import { Link } from 'react-router-dom';
 import useContentful from '../../hooks/use_contentful';
 
 import Card from '../common/card';
@@ -36,7 +35,7 @@ function ProjectCarousel({ title, pageID }) {
 
   const projectCollection = data;
   const projects = projectCollection.projectPageCollection.items
-  const projectList = projects.sort((a, b) => (a.orderNumber - b.orderNumber));
+  const sortedProjects = projects.sort((a, b) => (a.projectCard.orderNumber - b.projectCard.orderNumber));
 
   if (pageID == undefined) { pageID = 'null' }
 
@@ -44,7 +43,7 @@ function ProjectCarousel({ title, pageID }) {
     <section className={styles.c_body} data-type='project list'>
       <h3 className={styles.section_title}>{title}</h3>
       <ul className={styles.project_list}>
-        {projectList.map((project) => {
+        {sortedProjects.map((project) => {
 
           if (project.sys.id !== pageID.id) {
             return (
