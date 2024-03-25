@@ -1,7 +1,7 @@
 import useContentful from '../hooks/use_contentful';
 
 import Header from '../components/layout/header';
-import Hero from '../components/layout/page_hero';
+import { PageHero } from '../components/layout/page_hero';
 import Article from '../components/common/article';
 import ProjectCarousel from '../components/layout/project_carousel'
 import Footer from '../components/layout/footer';
@@ -25,11 +25,13 @@ const query = `query{
       items{
         __typename
         ... on LandingPageSection{
+          sectionTitle
           sectionHero{
+            heroTemplate
             title{
                 json
               }
-      subTitle
+            subTitle
           }
           sectionTopicCollection(limit:5){
             items{
@@ -50,19 +52,10 @@ const query = `query{
             }
           }
         }
-        ... on JobContentBlock{
-          jobTitle
-          employer
-          dates
-          summary{
-            json
-          }
-        }
       }
     }
   }
-}
-`;
+}`;
 
 function Home() {
 
@@ -81,12 +74,12 @@ function Home() {
     <div className={styles.c_container} id='farid-portfolio'>
       <Header />
       <main className={styles.c_main} data-page-template="landing page" data-page-theme="home" >
-        <Hero template={pageHero} />
+        <PageHero template={pageHero} />
         {pageSection.map((section) => (
           <section key={section.sectionTitle} className={styles.c_section} data-section-name={section.sectionTitle}>
             <div className={styles.c_body}>
               {section.sectionTopicCollection.items.map((topic) => (
-                <Article key={topic.topicTitle} content={topic} />
+                <Article key={topic.contentTitle} content={topic} />
               ))}
             </div>
           </section>

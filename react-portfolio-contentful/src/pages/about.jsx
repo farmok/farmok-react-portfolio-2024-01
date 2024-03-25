@@ -12,56 +12,24 @@ const query = `query{
   landingPage(id: "7a3l5v2aKisbcUAqdZoLqn") {
     pageTitle
     pageHero {
-      __typename
-      ... on LandingPageHero {
-        heroHeadline{
-          json
-        }
-        heroSubHeadline
-        introduction{
-          json
-        }
+      heroTemplate
+      title{
+        json
       }
-      ... on LandingPageTitle {
-        pageTitle
-        landingPageTags
-        document{
-          url
-        }
-        introduction{
-          json
-        }
+      subTitle
+      pageTags
+      documentDownload{
+        url
+      }
+      introduction{
+        json
       }
     }
 
     pageSectionCollection(limit:10){
       items{
         __typename
-        ... on LandingPageSection{
-          sectionHero{
-            heroHeadline
-            heroSubHeadline
-          }
-          sectionTopicCollection(limit:5){
-            items{
-              topicTitle
-              topicBody{
-                json
-              }
-              topicImage01{
-                url
-                description
-                title
-              }
-              topicImage02{
-                url
-                description
-                title
-              }
-            }
-          }
-        }
-        ... on JobHistorySection{
+        ... on JobContentBlock{
           jobTitle
           employer
           dates
@@ -77,7 +45,6 @@ const query = `query{
 
 function About() {
 
-
   let { data, errors } = useContentful(query);
 
   if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
@@ -85,8 +52,16 @@ function About() {
 
   const { landingPage } = data
   const pageHero = landingPage.pageHero
-  const tags = pageHero.landingPageTags
+  const tags = pageHero.pageTags
   const pageSection = landingPage.pageSectionCollection.items
+
+  const TITLE_RICHTEXT_OPTIONS = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, childern) => {
+        return <>{childern}</>
+      }
+    }
+  }
 
   const RICHTEXT_OPTIONS = {
     renderNode: {
@@ -114,13 +89,14 @@ function About() {
       <main className={styles.c_main} data-page-template="landing page" data-page-theme="about" >
         <section className={styles.c_hero}>
           <div className={styles.c_title}>
-            <h1 className={styles.project_title}>{pageHero.pageTitle}</h1>
+            <h1 className={styles.project_title}>{documentToReactComponents(pageHero.title.json, TITLE_RICHTEXT_OPTIONS)}</h1>
             <div className={styles.project_tag__list}>
               {tags.map((tag) => (
                 <p key={tag} className={styles.project_tag__item}>{tag}</p>
               ))}
             </div>
-            <a href={pageHero.document.url} target='blank'> Download Resume </a>
+            <a href={pageHero.documentDownload.url} target='blank'> Download Resume </a>
+            <div>{documentToReactComponents(pageHero.introduction.json, RICHTEXT_OPTIONS)}</div>
           </div>
         </section>
         <section className={styles.c_section}>

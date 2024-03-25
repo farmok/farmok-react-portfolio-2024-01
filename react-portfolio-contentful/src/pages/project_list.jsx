@@ -12,15 +12,15 @@ const query = `query{
       sys{
         id
       }
-      orderNumber
       projectCard{
-        projectThumbnail{
+        orderNumber
+        cardThumbnail{
           url
           title
         }
-        projectTag
-        projectTitle
-        projectSubtitle
+        cardTag
+        cardTitle
+        cardSubtitle
       }
     }
   }
@@ -47,8 +47,8 @@ function ProjectList() {
                 </section>
                 <section className={styles.c_body}>
                     <ul className={styles.project_list}>
-                        {projectList.map((project, index) => (
-                            <li key={index} className={styles.project_list__item}>
+                        {projectList.map((project) => (
+                            <li key={project.projectCard.orderNumber} className={styles.project_list__item}>
                                 <Card template={project} />
                             </li>
                         ))}

@@ -12,15 +12,15 @@ const query = `query{
       sys{
         id
       }
-      orderNumber
       projectCard{
-        projectThumbnail{
+        orderNumber
+        cardThumbnail{
           url
           title
         }
-        projectTag
-        projectTitle
-        projectSubtitle
+        cardTag
+        cardTitle
+        cardSubtitle
       }
     }
   }

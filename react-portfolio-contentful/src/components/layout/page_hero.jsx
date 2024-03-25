@@ -15,6 +15,22 @@ const HERO_RICHTEXT_OPTIONS = {
     }
 }
 
+const SECTION_HERO_RICHTEXT_OPTIONS = {
+    renderNode: {
+        [BLOCKS.PARAGRAPH]: (node, childern) => {
+            return <>{childern}</>
+        }
+    }
+}
+
+const TITLE_RICHTEXT_OPTIONS = {
+    renderNode: {
+        [BLOCKS.PARAGRAPH]: (node, childern) => {
+            return <>{childern}</>
+        }
+    }
+}
+
 const INTRO_RICHTEXT_OPTIONS = {
     renderNode: {
         [BLOCKS.PARAGRAPH]: (node, childern) => {
@@ -32,32 +48,16 @@ const INTRO_RICHTEXT_OPTIONS = {
     }
 }
 
-function Hero({ template }) {
-    const sectionHero = template.sectionTitle;
+function PageHero({ template }) {
 
-    let heroContent;
-
-    if (sectionHero) {
-        heroContent =
-            <div className={styles.c_hero}>
-                <div className={styles.c_container}>
-                    <h2 className={styles.hero_headline}>{template.sectionHero.heroHeadline}</h2>
-                    <p className={styles.hero_subhead}>{template.sectionHero.heroSubHeadline}</p>
-                </div>
-            </div>
-    } else {
-        heroContent =
+    return (
+        <>
             <section className={styles.c_hero}>
                 <h1 className={styles.hero_headline}>
                     {documentToReactComponents(template.title.json, HERO_RICHTEXT_OPTIONS)}
                 </h1>
                 <h2 className={styles.hero_subhead}>{template.subTitle}</h2>
             </section>
-    }
-
-    return (
-        <>
-            {heroContent}
             {template.introduction &&
                 <section className={styles.c_introduction}>
                     {documentToReactComponents(template.introduction.json, INTRO_RICHTEXT_OPTIONS)}
@@ -67,4 +67,47 @@ function Hero({ template }) {
     );
 }
 
-export default Hero;
+
+function SectionHero({ template }) {
+
+    return (
+        <>
+            <div className={styles.c_hero}>
+                <div className={styles.c_container}>
+                    <h2 className={styles.hero_headline}>
+                        {documentToReactComponents(template.sectionHero.title.json, SECTION_HERO_RICHTEXT_OPTIONS)}
+                    </h2>
+                    <p className={styles.hero_subhead}>{template.sectionHero.subTitle}</p>
+                </div>
+            </div>
+            {template.introduction &&
+                <section className={styles.c_introduction}>
+                    {documentToReactComponents(template.introduction.json, INTRO_RICHTEXT_OPTIONS)}
+                </section>
+            }
+        </>
+    );
+}
+
+function ProjectHero({ template }) {
+    const tags = template.pageTags
+
+    console.log(template)
+
+    return (
+        <section className={styles.c_hero}>
+            <img src={template.heroImage.url} alt={template.heroImage.title} />
+            <hgroup className={styles.c_title}>
+                <h1 className={styles.project_title}>{documentToReactComponents(template.title.json, TITLE_RICHTEXT_OPTIONS)}</h1>
+                <h2 className={styles.project_subtitle}>{template.subTitle}</h2>
+                <div className={styles.project_tag__list}>
+                    {tags.map((tag) => (
+                        <p key={tag} className={styles.project_tag__item}>{tag}</p>
+                    ))}
+                </div>
+            </hgroup>
+        </section>
+    );
+}
+
+export { PageHero, SectionHero, ProjectHero }

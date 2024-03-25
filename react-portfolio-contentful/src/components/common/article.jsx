@@ -28,14 +28,14 @@ function Article({ content }) {
     return (
         <article className={styles.c_topic}>
             <div className={styles.topic_content}>
-                <h3 className={styles.topic_title}>{content.topicTitle}</h3>
+                <h3 className={styles.topic_title}>{content.contentTitle}</h3>
                 <div className={styles.topic_body}>
-                    {documentToReactComponents(content.topicBody.json, RICHTEXT_OPTIONS)}
+                    {documentToReactComponents(content.contentBody.json, RICHTEXT_OPTIONS)}
                 </div>
             </div>
             <div className={styles.topic_media}>
-                <figure className={styles.images_100}><img src={content.topicImage01.url} alt={content.topicImage01.title} /><figcaption className={styles.topic_image__caption}>{content.topicImage01.description}</figcaption></figure>
-                {content.topicImage02 && <figure className={styles.images_100}><img src={content.topicImage02.url} alt={content.topicImage02.title} /><figcaption className={styles.topic_image__caption}>{content.topicImage02.description}</figcaption></figure>}
+                <figure className={styles.images_100}><img src={content.contentImage01.url} alt={content.contentImage01.title} /><figcaption className={styles.topic_image__caption}>{content.contentImage01.description}</figcaption></figure>
+                {content.contentImage02 && <figure className={styles.images_100}><img src={content.contentImage02.url} alt={content.contentImage02.title} /><figcaption className={styles.topic_image__caption}>{content.contentImage02.description}</figcaption></figure>}
             </div>
         </article >
     );

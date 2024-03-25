@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import useContentful from '../hooks/use_contentful';
 
 import Header from '../components/layout/header';
-import Hero from '../components/layout/project_hero';
+import { ProjectHero } from '../components/layout/page_hero';
 import Article from '../components/common/article';
 import ProjectCarousel from '../components/layout/project_carousel';
 import Footer from '../components/layout/footer';
@@ -16,26 +16,28 @@ function ProjectDetails() {
   const query = `query{
     projectPage(id: "${id.id}"){
       projectHero{
-          projectHeroImage{
+          heroImage{
             url
             title
           }
-          projectTitle
-          projectSubTitle
-          projectTags
+          title{
+            json
+          }
+          subTitle
+          pageTags
       }
       projectSectionCollection(limit: 10){
         items{
-            topicTitle
-            topicBody{
+            contentTitle
+            contentBody{
               json
             }
-            topicImage01{
+            contentImage01{
               url
               title
               description
             }
-            topicImage02{
+            contentImage02{
               url
               title
               description
@@ -59,10 +61,10 @@ function ProjectDetails() {
     <div className={styles.c_container} id='farid-portfolio'>
       <Header />
       <main className={styles.c_main} data-page-template='project'>
-        <Hero template={projectHero} />
+        <ProjectHero template={projectHero} />
         <section className={styles.c_body}>
-          {projectSection.map((section, index) => (
-            <Article key={index} content={section} />
+          {projectSection.map((section) => (
+            <Article key={section.contentTitle} content={section} />
           ))}
         </section>
         <ProjectCarousel title={'Additional Projects'} pageID={id} />

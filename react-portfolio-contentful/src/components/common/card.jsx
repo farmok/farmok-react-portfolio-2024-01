@@ -6,11 +6,11 @@ import styles from '../../assets/styles/main.module.scss';
 function Card({ template }) {
 
     return (
-        <Link to={`/project_detail/${template.sys.id}`} className={styles.c_card} data-role={template.projectCard.projectTag}>
-            <img className={styles.card_image} src={template.projectCard.projectThumbnail.url} alt="" />
+        <Link to={`/project_detail/${template.sys.id}`} className={styles.c_card} data-role={template.projectCard.cardTag}>
+            <img className={styles.card_image} src={template.projectCard.cardThumbnail.url} alt="" />
             <div className={styles.card_label}>
-                <h4>{template.projectCard.projectTitle}</h4>
-                <p>{template.projectCard.projectSubtitle}</p>
+                <h4>{template.projectCard.cardTitle}</h4>
+                <p>{template.projectCard.cardSubtitle}</p>
             </div>
             <p className={styles.card_cta}>Explore</p>
         </Link>

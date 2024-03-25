@@ -1,7 +1,7 @@
 import useContentful from '../hooks/use_contentful';
 
 import Header from '../components/layout/header';
-import Hero from '../components/layout/page_hero';
+import { PageHero, SectionHero } from '../components/layout/page_hero';
 import Article from '../components/common/article';
 import Footer from '../components/layout/footer';
 
@@ -10,48 +10,52 @@ import styles from '../assets/styles/main.module.scss';
 function Leadership() {
 
     const query = `query{
-        landingPage(id:"28wSSYlYqCBVQCG2v56O02"){
-            pageHero{
-                title{
+        landingPage(id: "28wSSYlYqCBVQCG2v56O02") {
+            pageHero {
+                heroTemplate
+                title {
                     json
                 }
                 subTitle
-                introduction{
+                introduction {
                     json
                 }
             }
-            landingPageSectionCollection(limit:10){
-                items{
-                    sectionTitle
-                    sectionHero{
-                        title{
-                            json
-                        }
-                        subTitle
-                    }
-                    sectionTopicCollection(limit:10){
-                        items{
-                            topicTitle
-                            topicBody{
+            pageSectionCollection(limit: 10) {
+                items {
+                    __typename
+                    ... on LandingPageSection {
+                        sectionTitle
+                        sectionHero {
+                            heroTemplate
+                            title {
                                 json
                             }
-                            topicImage01{
-                                url
-                                title
-                                description
-                            }
-                            topicImage02{
-                                url
-                                title
-                                description
+                            subTitle
+                        }
+                        sectionTopicCollection(limit: 10) {
+                            items {
+                                contentTitle
+                                contentBody {
+                                    json
+                                }
+                                contentImage01 {
+                                    url
+                                    title
+                                    description
+                                }
+                                contentImage02 {
+                                    url
+                                    title
+                                    description
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-    `;
+    }`;
 
 
     let { data, errors } = useContentful(query);
@@ -60,20 +64,20 @@ function Leadership() {
     if (!data) return <span>Loading...</span>;
 
     const { landingPage } = data;
-    const pageHero = landingPage.landingPageHero
-    const pageSection = landingPage.landingPageSectionCollection.items
+    const pageHero = landingPage.pageHero
+    const pageSection = landingPage.pageSectionCollection.items
 
     return (
         <div className={styles.c_container} id='farid-portfolio'>
             <Header />
             <main className={styles.c_main} data-page-template="landing page" data-page-theme="leadership" >
-                <Hero template={pageHero} />
+                <PageHero template={pageHero} />
                 {pageSection.map((section) => (
                     <section key={section.sectionTitle} className={styles.c_section} data-section-name={section.sectionTitle}>
-                        <Hero template={section} />
+                        <SectionHero template={section} />
                         <div className={styles.c_body}>
                             {section.sectionTopicCollection.items.map((topic) => (
-                                <Article key={topic.topicTitle} content={topic} />
+                                <Article key={topic.contentTitle} content={topic} />
                             ))}
                         </div>
                     </section>
