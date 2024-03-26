@@ -70,11 +70,11 @@ function Leadership() {
     return (
         <div className={styles.c_container} id='farid-portfolio'>
             <Header />
-            <main className={styles.c_main} data-page-template="landing page" data-page-theme="leadership" >
-                <PageHero content={hero} />
+            <main className={styles.c_main} data-page-template='Landing Page' >
+                <PageHero content={hero} theme='Leadership' />
                 {sections.map((section) => (
-                    <section key={section.sectionTitle} className={styles.c_section} data-section-name={section.sectionTitle}>
-                        <SectionHero content={section} />
+                    <section key={section.sectionTitle} className={styles.c_section}>
+                        <SectionHero content={section} theme={section.sectionTitle} />
                         <div className={styles.c_body}>
                             {section.sectionTopicCollection.items.map((topic) => (
                                 <PageContent key={topic.contentTitle} content={topic} />

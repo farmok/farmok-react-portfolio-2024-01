@@ -4,7 +4,7 @@
     flex-direction: column-reverse;
     gap: 2rem;
     max-width: 960px;
-    padding: 1rem 0.5rem;
+    padding: 1rem 0;
     width: 100%;
 
     @media screen and (min-width: $screen-md) {
@@ -26,7 +26,7 @@
         flex-wrap: wrap;
         gap: 2rem;
         justify-content: flex-end;
-        padding: 1rem 0.5rem;
+        padding: 1rem 0;
 
         .topic_image__caption {
             font-weight: 300;
@@ -36,7 +36,7 @@
     }
 
     .topic_content {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0;
         flex: 1 1 0;
 
         h3.topic_title {
@@ -54,6 +54,61 @@
         .topic_body {
             border-left: 4px solid $brand-yellow;
             margin-left: 1.25rem;
+            padding: 0.5rem 0 0.5rem 2rem;
+
+            p {
+                margin: 0 0 2rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            b {
+                font-weight: 500;
+            }
+
+            ul {
+                padding-left: 0.25rem;
+            }
+        }
+    }
+
+    .job_content {
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 0;
+
+        .c_title {
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        h3.job_title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 0.9;
+            text-transform: uppercase;
+
+            @media screen and (min-width: 620px) {
+                font-size: 2rem;
+            }
+        }
+
+        h4.job_employer {
+            font-size: 0.85rem;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        h5.job_dates {
+            font-size: 1rem;
+        }
+
+        .job_summary {
+            border-left: 4px solid $brand-yellow;
             padding: 0.5rem 0 0.5rem 2rem;
 
             p {

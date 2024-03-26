@@ -1,9 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
-// import styles from './assets/styles/main.module.scss';
 import Nav_Route from './routes';
-// import './index.css'
 
 import { BrowserRouter } from 'react-router-dom';
 

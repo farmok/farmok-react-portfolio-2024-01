@@ -40,13 +40,8 @@ function ProjectList() {
     return (
         <div className={styles.c_container} id='farid-portfolio'>
             <Header />
-            <main className={styles.c_main} data-page-template='project'>
+            <main className={styles.c_main} data-page-template='Project List Page'>
                 <PageTitle title={'Collection of Projects'} />
-                {/* <section className={styles.c_hero}>
-                    <div className={styles.c_title}>
-                        <h1 className={styles.project_title}>Collection of Projects</h1>
-                    </div>
-                </section> */}
                 <section className={styles.c_body}>
                     <ul className={styles.project_list}>
                         {sortedProjects.map((project) => (

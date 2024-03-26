@@ -4,6 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 
 import styles from '../../assets/styles/main.module.scss';
+import { Download } from '../common/download';
 
 const HERO_RICHTEXT_OPTIONS = {
     renderNode: {
@@ -36,15 +37,18 @@ const INTRO_RICHTEXT_OPTIONS = {
         },
         [BLOCKS.LIST_ITEM]: (node, childern) => {
             return <li>{childern}</li>
+        },
+        [INLINES.HYPERLINK]: (node, children) => {
+            return <a href={node.data.uri}>{children}</a>
         }
     }
 }
 
-function PageHero({ content }) {
+function PageHero({ content, theme }) {
 
     return (
         <>
-            <section className={styles.c_hero} data-template={content.heroTemplate}>
+            <section className={styles.c_hero} data-template={content.heroTemplate} data-theme={theme}>
                 <hgroup className={styles.c_title}>
                     <h1 className={styles.hero_title}>
                         {documentToReactComponents(content.title.json, HERO_RICHTEXT_OPTIONS)}
@@ -53,7 +57,7 @@ function PageHero({ content }) {
                 </hgroup>
             </section>
             {content.introduction &&
-                <section className={styles.c_introduction}>
+                <section className={styles.c_introduction} data-theme={theme}>
                     {documentToReactComponents(content.introduction.json, INTRO_RICHTEXT_OPTIONS)}
                 </section>
             }
@@ -62,10 +66,10 @@ function PageHero({ content }) {
 }
 
 
-function SectionHero({ content }) {
+function SectionHero({ content, theme }) {
 
     return (
-        <div className={styles.c_hero} data-template={content.sectionHero.heroTemplate}>
+        <div className={styles.c_hero} data-template={content.sectionHero.heroTemplate} data-theme={theme}>
             <hgroup className={styles.c_title}>
                 <h2 className={styles.hero_title}>
                     {documentToReactComponents(content.sectionHero.title.json, SECTION_HERO_RICHTEXT_OPTIONS)}
@@ -96,7 +100,7 @@ function ProjectHero({ content }) {
     );
 }
 
-function PageTitle({ content, title }) {
+function PageTitle({ content, title, theme }) {
     if (!content) {
         return (
             <section className={styles.c_hero} data-template='Project List Page'>
@@ -108,6 +112,10 @@ function PageTitle({ content, title }) {
     } else {
 
         const tags = content.pageTags
+        const download = content.documentDownload
+
+        console.log(content)
+        console.log(download.url)
 
         return (
             <>
@@ -123,13 +131,11 @@ function PageTitle({ content, title }) {
                         }
                     </hgroup>
                 </section>
-                {content.documentDownload &&
-                    <section className={styles.c_section}>
-                        <a className={styles.button + styles.solid} href={content.documentDownload.url} target='blank'> Download Resume </a>
-                    </section>
+                {download &&
+                    < Download key='download 01' content={download} />
                 }
                 {content.introduction &&
-                    <section className={styles.c_introduction}>
+                    <section className={styles.c_introduction} data-theme={theme}>
                         {documentToReactComponents(content.introduction.json, INTRO_RICHTEXT_OPTIONS)}
                     </section>
                 }

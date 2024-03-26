@@ -1,0 +1,13 @@
+.c_download {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0;
+    max-width: 960px;
+    padding: 1rem 0.5rem;
+    width: 100%;
+}
+
+.c_hero + .c_download {
+    margin-top: 0;
+}

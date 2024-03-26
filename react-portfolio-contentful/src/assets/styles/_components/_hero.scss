@@ -1,14 +1,15 @@
-// .c_hero[data-template='Landing Page']
-// .c_hero[data-template='Landing Page Section']
-// .c_hero[data-template='Project List Page']
-// .c_hero[data-template='Project Detail Page']
-// .c_hero[data-template='About Page']
+// [data-template='Landing Page']
+// [data-template='Landing Page Section']
+// [data-template='Project List Page']
+// [data-template='Project Detail Page']
+// [data-template='About Page']
 
 .c_hero {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	max-width: 1200px;
 
 	img {
 		border-radius: 1rem;
@@ -16,12 +17,22 @@
 	}
 
 	.c_title {
-		align-items: flex-start;
 		gap: 0.25rem;
 		margin-top: 1rem;
-		max-width: 960px;
 		padding: 1rem 0.5rem;
 		text-align: left;
+		max-width: 960px;
+		width: 100%;
+
+		h1.hero_title {
+			font-size: 2rem;
+			line-height: 100%;
+			width: 100%;
+
+			@media screen and (min-width: 620px) {
+				font-size: 3rem;
+			}
+		}
 
 		h1.hero_title,
 		h1.hero_title p {
@@ -38,192 +49,194 @@
 			-webkit-text-fill-color: transparent;
 		}
 
-		h1.hero_title {
-			font-size: 2rem;
-			line-height: 100%;
-
-			@media screen and (min-width: 620px) {
-				font-size: 3rem;
-			}
-		}
-
 		h2.hero_subtitle {
 			display: block;
 			font-size: 1.25rem;
 			font-weight: 700;
 			line-height: 120%;
 			text-transform: none;
+			width: 100%;
 
 			@media screen and (min-width: 620px) {
 				font-size: 2rem;
 			}
 		}
 
-		.page_ {
-			&tag__list {
-				display: flex;
-				flex-direction: row;
-				flex-wrap: wrap;
-				gap: 1rem;
-				margin-top: 1rem;
-			}
-
-			&tag__item {
-				background-color: scale-color($brand-violet, $lightness: 5%, $saturation: -50%);
-				border-radius: 2rem;
-				color: $ui-text-light;
-				font-size: 0.8rem;
-				font-weight: 600;
-				padding: 0.25rem 1rem;
-			}
+		.page_tag__list {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 1rem;
+			margin-top: 1rem;
+			width: 100%;
 		}
-	}
-}
 
-.c_introduction {
-	align-items: flex-start;
-	font-size: 1rem;
-	font-weight: 300;
-	gap: 2rem;
-	padding: 2rem 1.5rem 1rem;
-	max-width: 920px;
-
-	h4 {
-		font-size: 1.5em;
-		font-weight: 900;
-		line-height: 1em;
-		text-transform: uppercase;
-
-		b {
-			font-weight: 900;
+		.page_tag__item {
+			background-color: scale-color($brand-violet, $lightness: 5%, $saturation: -50%);
+			border-radius: 2rem;
+			color: $ui-text-light;
+			font-size: 0.8rem;
+			font-weight: 600;
+			padding: 0.25rem 1rem;
 		}
 	}
 
-	p b {
-		font-weight: 500;
-	}
-
-	ul {
-		padding: 0 1rem;
-	}
-}
-
-.c_hero[data-template='Landing Page'] {
-	height: 80vh;
-	max-width: 1200px;
-	min-height: 1200px;
-
-	.c_title {
-		align-items: center;
+	&[data-template='Landing Page'] {
+		height: 100vh;
 		max-width: 1200px;
-	}
+		min-height: 1200px;
 
-	h1.hero_title {
-		padding: 0.25rem 0;
-		width: 100%;
-
-		& > p {
-			background-image: linear-gradient(
-				90deg,
-				$brand-white 10%,
-				$brand-yellow 20%,
-				$brand-orange 35%,
-				$brand-red 50%,
-				$brand-purple 65%,
-				$brand-violet 80%,
-				$brand-black 90%
-			);
-			text-align: center;
-
-			&:first-child {
-				font-weight: 900;
-				line-height: 0.8em;
-			}
-
-			&:last-child {
-				font-weight: 900;
-				line-height: 0.8em;
-			}
+		.c_title {
+			max-width: 1200px;
 		}
-	}
-
-	h2.hero_subtitle {
-		color: $ui-primary;
-		font-size: 5vw;
-		font-size: clamp(1.25rem, 5vw, 62px);
-		font-weight: 700;
-		padding-right: 0.25em;
-		text-align: right;
-		text-transform: none;
-		width: 100%;
-	}
-}
-
-.c_hero[data-template='Project List Page'],
-.c_hero[data-template='About Page'] {
-	margin-top: 75px;
-}
-
-*[data-page-theme='home'] {
-	> .c_hero {
-		background:
-			url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
-				no-repeat,
-			url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1000px
-				no-repeat,
-			$brand-black;
 
 		h1.hero_title {
-			p:first-child {
-				font-size: clamp(1rem, 20vw, 192px);
+			padding: 0.25rem 0;
+			width: 100%;
+
+			& > p {
+				background-image: linear-gradient(
+					90deg,
+					$brand-white 10%,
+					$brand-yellow 20%,
+					$brand-orange 35%,
+					$brand-red 50%,
+					$brand-purple 65%,
+					$brand-violet 80%,
+					$brand-black 90%
+				);
+				text-align: center;
+
+				&:first-child {
+					font-weight: 900;
+					line-height: 0.8em;
+				}
+
+				&:last-child {
+					font-weight: 900;
+					line-height: 0.8em;
+				}
+			}
+		}
+
+		h2.hero_subtitle {
+			color: $ui-primary;
+			font-size: 5vw;
+			font-size: clamp(1.25rem, 5vw, 62px);
+			font-weight: 700;
+			padding-right: 0.25em;
+			text-align: right;
+			text-transform: none;
+			width: 100%;
+		}
+
+		&[data-theme='Home'] {
+			background:
+				url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center /
+					1200px no-repeat,
+				url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center /
+					1000px no-repeat,
+				$brand-black;
+
+			h1.hero_title {
+				p:first-child {
+					font-size: clamp(1rem, 20vw, 192px);
+				}
+
+				p:last-child {
+					font-size: clamp(1rem, 15vw, 144px);
+				}
 			}
 
-			p:last-child {
-				font-size: clamp(1rem, 15vw, 144px);
+			.c_introduction p {
+				font-size: clamp(1.15rem, 3vw, 24px);
+			}
+		}
+
+		&[data-theme='Leadership'] {
+			background:
+				url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center /
+					1200px no-repeat,
+				url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center /
+					1200px no-repeat,
+				$brand-black;
+
+			h1.hero_title {
+				p:first-child {
+					font-size: clamp(1rem, 14vw, 176px);
+				}
+
+				p:last-child {
+					font-size: clamp(1rem, 19.5vw, 245px);
+				}
+			}
+
+			.c_introduction p {
+				font-size: clamp(1.15rem, 3vw, 24px);
 			}
 		}
 	}
 
-	.c_introduction {
-		font-size: clamp(1.15rem, 3vw, 24px);
-	}
-}
-
-*[data-page-theme='leadership'] {
-	> .c_hero {
-		background:
-			url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center / 1200px
-				no-repeat,
-			url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center / 1200px
-				no-repeat,
-			$brand-black;
-
-		h1.hero_title {
-			p:first-child {
-				font-size: clamp(1rem, 14vw, 176px);
-			}
-
-			p:last-child {
-				font-size: clamp(1rem, 19.5vw, 245px);
-			}
-		}
-	}
-	.c_introduction {
-		font-size: clamp(1.15rem, 3vw, 24px);
-	}
-}
-
-.c_section {
-	.c_hero {
+	&[data-template='Landing Page Section'] {
 		max-width: 960px;
-		min-height: 100vh;
+		height: 100vh;
 
 		&:before {
 			content: '';
 			position: absolute;
-			min-height: 65vh;
+			height: 65vh;
 			width: 100%;
 			z-index: -1;
+		}
+
+		&[data-theme='Cultivate Relationships']:before {
+			background:
+				$c-hero-background,
+				url(https://ucarecdn.com/80e2064d-b932-4823-9ade-fc4f9d9d40a6/-/preview/1200x1200/) center center /
+					contain no-repeat,
+				url(https://ucarecdn.com/f9259c13-e9cb-4e15-a3f8-2a3f4bb13ca7/-/preview/1200x1200/) center bottom /
+					contain no-repeat,
+				$brand-black;
+		}
+
+		&[data-theme='Prioritizing Rigorously']:before {
+			background:
+				$c-hero-background,
+				url(https://ucarecdn.com/9d17c298-b345-4804-9ac5-bf0adb033d4c/-/preview/1200x1200/) center center /
+					contain no-repeat,
+				url(https://ucarecdn.com/1331cb12-a9f1-4556-a80f-2468263b4807/-/preview/1200x1200/) center center /
+					contain no-repeat,
+				$brand-black;
+		}
+
+		&[data-theme='Unleash Curiosity']:before {
+			background:
+				$c-hero-background,
+				url(https://ucarecdn.com/60dcc811-a635-488a-a447-058962a6eb29/-/preview/1200x1200/) center bottom /
+					contain no-repeat,
+				url(https://ucarecdn.com/10bdec2b-6a50-40e7-a292-2e00fc84bcc3/-/preview/1200x1200/) center bottom /
+					contain no-repeat,
+				$brand-black;
+		}
+
+		&[data-theme='Embracing Systems']:before {
+			background:
+				$c-hero-background,
+				url(https://ucarecdn.com/6cd04403-2789-4d99-bd0f-4c216d0a2258/-/preview/1200x1200/) center center /
+					contain no-repeat,
+				url(https://ucarecdn.com/275e7b89-49b1-43a1-ae82-7c4883c95b79/-/preview/1200x1200/) center center /
+					contain no-repeat,
+				$brand-black;
+		}
+
+		&[data-theme='Pragmatic Scaling']:before {
+			background:
+				$c-hero-background,
+				url(https://ucarecdn.com/9a6d966d-a693-464c-9db7-6f82da4ca04e/-/preview/1200x1200/) center center /
+					contain no-repeat,
+				url(https://ucarecdn.com/92da340c-ddc8-4db5-a42d-6fe9afe3de98/-/preview/1200x1200/) center center /
+					contain no-repeat,
+				$brand-black;
 		}
 
 		h2.hero_title {
@@ -243,53 +256,67 @@
 		}
 	}
 
-	&[data-section-name='Cultivate Relationships'] .c_hero:before {
-		background:
-			$c-hero-background,
-			url(https://ucarecdn.com/80e2064d-b932-4823-9ade-fc4f9d9d40a6/-/preview/1200x1200/) center center / contain
-				no-repeat,
-			url(https://ucarecdn.com/f9259c13-e9cb-4e15-a3f8-2a3f4bb13ca7/-/preview/1200x1200/) center bottom / contain
-				no-repeat,
-			$brand-black;
+	&[data-template='Project List Page'],
+	&[data-template='Project Detail Page'],
+	&[data-template='About Page'] {
+		margin-top: 70px;
+	}
+}
+
+.c_introduction {
+	align-items: flex-start;
+	font-size: 1rem;
+	font-weight: 300;
+	gap: 1rem;
+	margin-bottom: 2rem;
+	max-width: 960px;
+	padding: 2rem 0.5rem 1rem;
+
+	h2 {
+		font-size: 1.25rem;
+		font-weight: 700;
+		line-height: 1em;
+		text-transform: uppercase;
+
+		b {
+			font-weight: 900;
+		}
 	}
 
-	&[data-section-name='Prioritizing Rigorously'] .c_hero:before {
-		background:
-			$c-hero-background,
-			url(https://ucarecdn.com/9d17c298-b345-4804-9ac5-bf0adb033d4c/-/preview/1200x1200/) center center / contain
-				no-repeat,
-			url(https://ucarecdn.com/1331cb12-a9f1-4556-a80f-2468263b4807/-/preview/1200x1200/) center center / contain
-				no-repeat,
-			$brand-black;
+	h5 {
+		font-size: 1.15rem;
+		font-weight: 500;
+		line-height: 1.5rem;
 	}
 
-	&[data-section-name='Unleash Curiosity'] .c_hero:before {
-		background:
-			$c-hero-background,
-			url(https://ucarecdn.com/60dcc811-a635-488a-a447-058962a6eb29/-/preview/1200x1200/) center bottom / contain
-				no-repeat,
-			url(https://ucarecdn.com/10bdec2b-6a50-40e7-a292-2e00fc84bcc3/-/preview/1200x1200/) center bottom / contain
-				no-repeat,
-			$brand-black;
+	p b {
+		font-weight: 500;
 	}
 
-	&[data-section-name='Embracing Systems'] .c_hero:before {
-		background:
-			$c-hero-background,
-			url(https://ucarecdn.com/6cd04403-2789-4d99-bd0f-4c216d0a2258/-/preview/1200x1200/) center center / contain
-				no-repeat,
-			url(https://ucarecdn.com/275e7b89-49b1-43a1-ae82-7c4883c95b79/-/preview/1200x1200/) center center / contain
-				no-repeat,
-			$brand-black;
+	ul {
+		padding: 0 1rem;
 	}
 
-	&[data-section-name='Pragmatic Scaling'] .c_hero:before {
-		background:
-			$c-hero-background,
-			url(https://ucarecdn.com/9a6d966d-a693-464c-9db7-6f82da4ca04e/-/preview/1200x1200/) center center / contain
-				no-repeat,
-			url(https://ucarecdn.com/92da340c-ddc8-4db5-a42d-6fe9afe3de98/-/preview/1200x1200/) center center / contain
-				no-repeat,
-			$brand-black;
+	h2 + ul {
+		background-color: scale-color($brand-violet, $blackness: 25%);
+		border-radius: 1.5rem;
+		margin-bottom: 2rem;
+		padding: 1.5rem 2rem;
+
+		@media screen and (min-width: $screen-xs) {
+			padding: 1.5rem 3rem;
+		}
+	}
+
+	&[data-theme='Home'] {
+		font-size: clamp(1.15rem, 3vw, 24px);
+	}
+
+	&[data-theme='Leadership'] {
+		font-size: clamp(1.15rem, 3vw, 24px);
+	}
+
+	&[data-theme='About'] {
+		font-size: clamp(0.85rem, 3vw, 16px);
 	}
 }

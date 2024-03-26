@@ -63,7 +63,7 @@
         width: 100%;
     }
 
-    .card_label {
+    .card_labels {
         align-items: flex-start;
         display: flex;
         flex-direction: column;
@@ -82,7 +82,7 @@
         }
 
         p {
-            color: scale-color($ui-text-light, $alpha: -15%);
+            color: $ui-text-light;
             font-size: 0.9rem;
             line-height: 120%;
             text-align: left;

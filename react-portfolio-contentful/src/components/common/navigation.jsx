@@ -5,9 +5,9 @@ function Navigation({ template }) {
     return (
         <nav className={styles.c_nav} data-page-template={template}>
             <ul className={styles.nav__group}>
-                <li className={styles.nav__link}>
+                {/* <li className={styles.nav__link}>
                     <a href='/design'>Design</a>
-                </li>
+                </li> */}
                 <li className={styles.nav__link}>
                     <a href='/leadership'>Leadership</a>
                 </li>

@@ -3,7 +3,8 @@ import useContentful from '../hooks/use_contentful';
 import Header from '../components/layout/header';
 import { PageTitle } from '../components/layout/hero';
 import { JobContent } from '../components/common/article';
-import ProjectCarousel from '../components/layout/project_carousel'
+import { Download } from '../components/common/download';
+import Carousel from '../components/common/carousel'
 import Footer from '../components/layout/footer';
 
 import styles from '../assets/styles/main.module.scss';
@@ -19,6 +20,7 @@ const query = `query{
       subTitle
       pageTags
       documentDownload{
+        description
         url
       }
       introduction{
@@ -40,6 +42,23 @@ const query = `query{
       }
     }
   }
+  projectPageCollection{
+    items{
+      sys{
+        id
+      }
+      projectCard{
+        orderNumber
+        cardThumbnail{
+          url
+          title
+        }
+        cardTag
+        cardTitle
+        cardSubtitle
+      }
+    }
+  }
 }
 `;
 
@@ -50,21 +69,23 @@ function About() {
   if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
   if (!data) return <span>Loading...</span>;
 
-  const { landingPage } = data
+  const { landingPage, projectPageCollection } = data
   const hero = landingPage.pageHero
+  const download = landingPage.pageHero.documentDownload
   const jobs = landingPage.pageSectionCollection.items
 
   return (
     <div className={styles.c_container} id='farid-portfolio'>
       <Header />
-      <main className={styles.c_main} data-page-template="landing page" data-page-theme="about" >
-        <PageTitle content={hero} />
+      <main className={styles.c_main} data-page-template="About Page" >
+        <PageTitle content={hero} theme='About' />
         <section className={styles.c_section}>
           {jobs.map((section) => (
             <JobContent key={section.jobTitle} content={section} />
           ))}
         </section>
-        <ProjectCarousel title={'Project Spotlight'} />
+        < Download content={download} />
+        < Carousel title={'Project Spotlight'} cards={projectPageCollection} />
       </main>
       <Footer />
     </div>

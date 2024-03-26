@@ -1,0 +1,67 @@
+.c_main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 1rem 0.5rem;
+    width: 100%;
+
+    &[data-page-template='Landing Page'] {
+        gap: 6rem;
+    }
+
+    &[data-page-template='Project List Page'] {
+        background:
+            url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -900px / 1200px no-repeat,
+            $brand-black;
+
+        .project_list {
+            align-content: space-between;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem 1rem;
+            width: 100%;
+
+            &__item {
+                border-radius: 1rem;
+                display: block;
+                min-width: 160px;
+                width: 100%;
+
+                @media screen and (min-width: $screen-xs) {
+                    width: 48%;
+                }
+
+                @media screen and (min-width: $screen-md) {
+                    width: 32%;
+                }
+            }
+        }
+    }
+
+    &[data-page-template='Project Page'] {
+        background:
+            url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -660px / 1200px no-repeat,
+            $brand-black;
+        gap: 6rem;
+
+        .c_body {
+            gap: 6rem;
+        }
+    }
+
+    &[data-page-template='About Page'] {
+        background:
+            url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -900px / 1200px no-repeat,
+            $brand-black;
+        padding: 0 0.25rem 1rem;
+    }
+
+    .c_body,
+    .c_section {
+        gap: 1rem;
+        max-width: 960px;
+    }
+}

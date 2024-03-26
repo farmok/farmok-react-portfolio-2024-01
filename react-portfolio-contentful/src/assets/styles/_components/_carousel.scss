@@ -1,0 +1,44 @@
+.c_carousel {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 6rem;
+    max-width: 960px;
+    padding: 1rem 0.5rem;
+    width: 100%;
+
+    .carousel_title {
+        align-self: start;
+        color: $ui-text-light;
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 1.3em;
+        text-transform: uppercase;
+        width: 100%;
+    }
+}
+
+.card_list {
+    align-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem 1rem;
+    width: 100%;
+
+    &__item {
+        border-radius: 1rem;
+        display: block;
+        min-width: 160px;
+        width: 100%;
+
+        @media screen and (min-width: $screen-xs) {
+            width: 48%;
+        }
+
+        @media screen and (min-width: $screen-md) {
+            width: 23%;
+        }
+    }
+}

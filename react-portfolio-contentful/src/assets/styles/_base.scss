@@ -36,7 +36,7 @@ h6 {
 
 p {
 	font-weight: 200;
-	line-height: 1.4em;
+	line-height: 1.6em;
 }
 
 a {
@@ -57,6 +57,53 @@ li {
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+}
+
+.button {
+	border: 0.125rem solid $ui-primary;
+	border-radius: 2rem;
+	color: $ui-primary;
+	cursor: pointer;
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 0.25rem 0.5rem;
+	text-transform: uppercase;
+}
+
+.button:hover {
+	background-color: $ui-primary;
+	color: $ui-text-dark;
+	text-decoration: none;
+}
+
+.button.solid {
+	background-color: $ui-primary;
+	border: none;
+	border-radius: 2rem;
+	color: $ui-text-dark;
+	cursor: pointer;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 0.5rem 1rem;
+	text-transform: uppercase;
+}
+
+.button.solid:hover {
+	background-color: $ui-secondary;
+}
+
+@media screen and (min-width: $screen-sm) {
+	.button {
+		font-size: 0.85rem;
+		padding: 0.25rem 1.5rem;
+	}
+
+	.button.solid {
+		font-size: 0.85rem;
+		padding: 0.5rem 1.75rem;
 	}
 }
 
@@ -127,6 +174,7 @@ li {
 }
 
 .c_header,
+.c_wrapper,
 .c_main,
 .c_container,
 .c_hero,
@@ -154,4 +202,16 @@ li {
 
 .c_body {
 	gap: 6rem;
+}
+
+.c_wrapper {
+	background-image: linear-gradient(
+		-90deg,
+		$brand-white 10%,
+		$brand-yellow 20%,
+		$brand-orange 35%,
+		$brand-red 50%,
+		$brand-purple 65%,
+		$brand-violet 80%
+	);
 }
