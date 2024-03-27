@@ -12,9 +12,8 @@
     }
 
     &[data-page-template='Project List Page'] {
-        background:
-            url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -900px / 1200px no-repeat,
-            $brand-black;
+        background: url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -900px / 1200px
+            no-repeat;
 
         .project_list {
             align-content: space-between;
@@ -42,9 +41,8 @@
     }
 
     &[data-page-template='Project Page'] {
-        background:
-            url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -660px / 1200px no-repeat,
-            $brand-black;
+        background: url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -660px / 1200px
+            no-repeat;
         gap: 6rem;
 
         .c_body {
@@ -53,9 +51,8 @@
     }
 
     &[data-page-template='About Page'] {
-        background:
-            url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -900px / 1200px no-repeat,
-            $brand-black;
+        background: url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -900px / 1200px
+            no-repeat;
         padding: 0 0.25rem 1rem;
     }
 

@@ -1,5 +1,5 @@
 body {
-	background: $ui-background;
+	// background: $ui-background;
 	box-sizing: border-box;
 	color: $ui-text-light;
 	font: 400 16px/1.2rem $brand-font;
@@ -205,13 +205,17 @@ li {
 }
 
 .c_wrapper {
-	background-image: linear-gradient(
-		-90deg,
-		$brand-white 10%,
-		$brand-yellow 20%,
-		$brand-orange 35%,
-		$brand-red 50%,
-		$brand-purple 65%,
-		$brand-violet 80%
-	);
+	// background: linear-gradient(
+	// 		180deg,
+	// 		scale-color($brand-violet, $alpha: -100%) 85%,
+	// 		scale-color($brand-purple, $alpha: -75%) 95%,
+	// 		scale-color($brand-red, $alpha: -80%) 100%
+	// 	),
+	// 	$brand-black;
+
+	background:
+		linear-gradient(180deg, scale-color($brand-black, $alpha: -90%), scale-color($brand-black, $alpha: -50%)),
+		url(https://ucarecdn.com/f9259c13-e9cb-4e15-a3f8-2a3f4bb13ca7/-/preview/1000x1000/) center bottom / 1000px
+			no-repeat,
+		$brand-black;
 }

@@ -13,6 +13,15 @@ $ui-secondary: $brand-orange;
 $ui-text-light: scale-color($brand-white, $alpha: -10%);
 $ui-text-dark: $brand-black;
 $ui-background: $brand-black;
+$ui-background-gradient: linear-gradient(
+    90deg,
+    $brand-white 10%,
+    $brand-yellow 20%,
+    $brand-orange 35%,
+    $brand-red 50%,
+    $brand-purple 65%,
+    $brand-violet 80%
+);
 
 $c-header-background-dark: #01013c99;
 $c-header-background-light: #fdfaf0c5;

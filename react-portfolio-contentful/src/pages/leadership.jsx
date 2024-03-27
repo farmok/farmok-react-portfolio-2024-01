@@ -68,7 +68,7 @@ function Leadership() {
     const sections = landingPage.pageSectionCollection.items
 
     return (
-        <div className={styles.c_container} id='farid-portfolio'>
+        <div className={styles.c_wrapper} id='farid-portfolio'>
             <Header />
             <main className={styles.c_main} data-page-template='Landing Page' >
                 <PageHero content={hero} theme='Leadership' />
