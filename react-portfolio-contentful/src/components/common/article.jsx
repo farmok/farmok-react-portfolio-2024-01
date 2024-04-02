@@ -35,8 +35,8 @@ function PageContent({ content }) {
                     </div>
                 </div>
                 <div className={styles.topic_media}>
-                    {content.contentImage01 && <figure className={styles.images_100}><img src={content.contentImage01.url} alt={content.contentImage01.title} /><figcaption className={styles.topic_image__caption}>{content.contentImage01.description}</figcaption></figure>}
-                    {content.contentImage02 && <figure className={styles.images_100}><img src={content.contentImage02.url} alt={content.contentImage02.title} /><figcaption className={styles.topic_image__caption}>{content.contentImage02.description}</figcaption></figure>}
+                    {content.contentImage01 && <figure className={styles.images_100}><img src={content.contentImage01.url} alt={content.contentImage01.description} /><figcaption className={styles.topic_image__caption}>{content.contentImage01.description}</figcaption></figure>}
+                    {content.contentImage02 && <figure className={styles.images_100}><img src={content.contentImage02.url} alt={content.contentImage02.description} /><figcaption className={styles.topic_image__caption}>{content.contentImage02.description}</figcaption></figure>}
                 </div>
             </article >
         );
