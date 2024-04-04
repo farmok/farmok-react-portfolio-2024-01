@@ -87,7 +87,7 @@ function Home() {
 
   return (
     <div className={styles.c_wrapper} id='farid-portfolio'>
-      <Header />
+      {/* <Header /> */}
       <main className={styles.c_main} data-page-template='Landing Page'>
         <PageHero content={hero} theme='Home' />
         <Carousel title={'Project Spotlight'} cards={projectPageCollection} />

@@ -1,5 +1,6 @@
 .c_header {
 	align-items: flex-end;
+	backdrop-filter: blur(8px);
 	background: $c-header-background-dark;
 	display: flex;
 	flex-direction: row;
