@@ -51,6 +51,10 @@
         .card_label p {
             color: $brand-yellow;
         }
+
+        .card_cta {
+            opacity: 1;
+        }
     }
 
     .card_image {
@@ -94,11 +98,15 @@
         font-weight: 600;
         letter-spacing: 1px;
         margin-top: 1.5rem;
+        opacity: 0;
         text-transform: uppercase;
+        transition: opacity 0.5s cubic-bezier(0.32, 0, 0.09, 1);
     }
 }
 
 .card_list:hover {
+    cursor: pointer;
+
     .card_list__item:not(:hover) .c_card {
         filter: brightness(0.5);
     }
