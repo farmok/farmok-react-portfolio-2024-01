@@ -2,7 +2,6 @@ import useContentful from '../hooks/use_contentful';
 
 import Header from '../components/layout/header';
 import { PageHero } from '../components/layout/hero';
-// import { PageContent } from '../components/common/article';
 import Carousel from '../components/common/carousel'
 import Footer from '../components/layout/footer';
 
@@ -87,7 +86,7 @@ function Home() {
 
   return (
     <div className={styles.c_wrapper} id='farid-portfolio'>
-      {/* <Header /> */}
+      <Header />
       <main className={styles.c_main} data-page-template='Landing Page'>
         <PageHero content={hero} theme='Home' />
         <Carousel title={'Project Spotlight'} cards={projectPageCollection} />

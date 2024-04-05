@@ -23,6 +23,12 @@
             gap: 2rem 1rem;
             width: 100%;
 
+            // &:hover {
+            //     .project_list__item:not(:hover) .c_card {
+            //         filter: brightness(0.5);
+            //     }
+            // }
+
             &__item {
                 border-radius: 1rem;
                 display: block;

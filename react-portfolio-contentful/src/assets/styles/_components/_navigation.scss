@@ -29,3 +29,17 @@
         }
     }
 }
+
+.nav__icon {
+    background-color: $ui-primary;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    width: 36px;
+    height: 36px;
+
+    &:hover {
+        background-color: $ui-secondary;
+    }
+}

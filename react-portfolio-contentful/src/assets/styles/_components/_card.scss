@@ -10,8 +10,8 @@
     position: relative;
     top: 0;
     transition:
-        top 0.25s ease,
-        background-color 0.25s ease-out;
+        top 1s cubic-bezier(0.32, 0, 0.09, 1),
+        background-color 1s cubic-bezier(0.32, 0, 0.09, 1);
     width: 100%;
 
     &::before {
@@ -41,7 +41,7 @@
     &:hover {
         background-color: $brand-violet;
         text-decoration: none;
-        top: -0.25em;
+        top: -0.5em;
 
         .card_image {
             border-color: $brand-orange;
@@ -95,5 +95,11 @@
         letter-spacing: 1px;
         margin-top: 1.5rem;
         text-transform: uppercase;
+    }
+}
+
+.card_list:hover {
+    .card_list__item:not(:hover) .c_card {
+        filter: brightness(0.5);
     }
 }

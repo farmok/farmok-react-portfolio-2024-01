@@ -61,4 +61,11 @@
             width: 32%;
         }
     }
+
+    &:hover {
+        background-color: red;
+        .project_list__item:not(:hover) .c_card {
+            filter: brightness(0.5);
+        }
+    }
 }

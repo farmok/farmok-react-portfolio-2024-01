@@ -1,11 +1,11 @@
-import styles from '../../assets/styles/main.module.scss';
-import Navigation from '../common/navigation';
-// import Social_Links from '../common/social';
 import useContentful from '../../hooks/use_contentful';
 
+import Navigation from '../common/navigation';
+
+import styles from '../../assets/styles/main.module.scss';
+
 const query = `query{
-  navigationBlockCollection(limit:2){
-    items{
+    navigationBlock(id:"6Z3fKgEbpAVFbaL8Yg0n0Y"){
       primaryNavigationCollection(limit:10){
         items{
           navigationLabel
@@ -23,8 +23,7 @@ const query = `query{
         }
       }
     }
-  }
-}`
+  }`
 
 
 function Footer() {
@@ -33,37 +32,15 @@ function Footer() {
     if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
     if (!data) return <span>Loading...</span>;
 
-    const navigation = data.navigationBlockCollection;
+    const navigation = data.navigationBlock;
 
-    // const navigationLinks = navigation.navigationBlock.primaryNavigationCollection.items
+    const primary = navigation.primaryNavigationCollection;
+    const social = navigation.socialNavigationCollection;
 
     return (
         <footer className={styles.c_footer}>
-            {navigation.items.map((nav) => {
-                const primary = nav.primaryNavigationCollection.items;
-                const social = nav.socialNavigationCollection.items;
-
-                <>
-                    <Navigation data={primary} />
-                    {/* <Navigation data={social} /> */}
-                </>
-
-                // {
-                //     primary.map((primary_links) => (
-
-                //     ))
-                // }
-
-                // {
-                //     social.map((social_links) => (
-                //         < Navigation key={social_links.navigationLabel} template={social_links} />
-                //     ))
-                // }
-                // console.log(primary + social)
-            }
-            )}
-            {/* <Navigation template='footer' />
-            <Social_Links /> */}
+            <Navigation data={primary} />
+            <Navigation data={social} />
         </footer >
     );
 }
