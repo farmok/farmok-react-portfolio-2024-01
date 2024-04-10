@@ -1,3 +1,12 @@
+.c_nav {
+    display: flex;
+    position: relative;
+
+    @media screen and (max-width: $screen-sm) {
+        flex-direction: column;
+    }
+}
+
 .nav__group {
     align-items: flex-end;
     display: flex;
@@ -29,14 +38,63 @@
 
 .nav__icon {
     background-color: $ui-primary;
-    mask-size: 100%;
+    cursor: pointer;
+    height: 36px;
+    mask-position: center;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    mask-position: center;
+    mask-size: 100%;
     width: 36px;
-    height: 36px;
 
     &:hover {
         background-color: $ui-secondary;
+    }
+}
+
+.c_header {
+    .nav__icon {
+        display: none;
+
+        @media screen and (max-width: $screen-xs) {
+            background-color: $brand-white;
+            cursor: pointer;
+            display: block;
+            height: 36px;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            mask-size: 100%;
+            width: 36px;
+
+            &:hover {
+                background-color: $ui-primary;
+            }
+        }
+    }
+
+    .nav__group {
+        align-items: flex-end;
+        display: flex;
+        gap: 0.25rem;
+        justify-content: space-between;
+
+        @media screen and (max-width: $screen-xs) {
+            background-color: scale-color($brand-violet, $blackness: 25%);
+            border-radius: 1rem;
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            opacity: 0;
+            padding: 2rem 1rem;
+            position: absolute;
+            right: 0;
+            top: 50px;
+
+            &.nav__open {
+                display: flex;
+                opacity: 1;
+                transition: opacity 2s cubic-bezier(0.32, 0, 0.09, 1);
+            }
+        }
     }
 }

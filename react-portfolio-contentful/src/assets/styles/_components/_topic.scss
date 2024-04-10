@@ -2,12 +2,12 @@
     align-items: center;
     display: flex;
     flex-direction: column-reverse;
-    gap: 2rem;
+    gap: 0;
     max-width: 960px;
     padding: 1rem 0;
     width: 100%;
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-sm) {
         gap: 3rem;
 
         &:nth-child(odd) {
@@ -26,12 +26,12 @@
         flex-wrap: wrap;
         gap: 2rem;
         justify-content: flex-end;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
 
         .topic_image__caption {
             font-weight: 300;
-            font-size: 0.85rem;
-            line-height: 150%;
+            font-size: 0.75rem;
+            line-height: 1.2;
         }
     }
 
@@ -40,23 +40,26 @@
         flex: 1 1 0;
 
         h3.topic_title {
-            font-size: 2rem;
+            font-size: 1.85rem;
             font-weight: 900;
             line-height: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
 
-            @media screen and (min-width: 620px) {
+            @media screen and (min-width: $screen-sm) {
                 font-size: 2.75rem;
+                margin-bottom: 1.5rem;
             }
         }
 
         .topic_body {
             border-left: 4px solid $brand-yellow;
-            margin-left: 1.25rem;
-            padding: 0.5rem 0 0.5rem 2rem;
+            margin-left: 0.75rem;
+            padding: 0.5rem 0 0.5rem 1rem;
 
             p {
+                font-size: 0.9rem;
+                line-height: 1.4;
                 margin: 0 0 2rem;
 
                 &:last-child {
@@ -70,6 +73,17 @@
 
             ul {
                 padding-left: 0.25rem;
+            }
+
+            @media screen and (min-width: $screen-xs) {
+                margin-left: 1.25rem;
+                padding: 0.5rem 0 0.5rem 2rem;
+            }
+
+            @media screen and (min-width: $screen-sm) {
+                p {
+                    font-size: 1rem;
+                }
             }
         }
     }
@@ -92,7 +106,7 @@
             line-height: 0.9;
             text-transform: uppercase;
 
-            @media screen and (min-width: 620px) {
+            @media screen and (min-width: $screen-sm) {
                 font-size: 2rem;
             }
         }
@@ -116,6 +130,99 @@
 
                 &:last-child {
                     margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.c_main[data-page-template='Project Page'] {
+    .c_topic {
+        align-items: center;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 0;
+        max-width: 960px;
+        padding: 1rem 0;
+        width: 100%;
+
+        @media screen and (min-width: $screen-sm) {
+            gap: 3rem;
+
+            &:nth-child(odd) {
+                flex-direction: row;
+            }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .topic_media {
+            align-items: flex-end;
+            display: flex;
+            flex: 1 1 0;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: flex-end;
+            padding: 0.5rem 0;
+
+            .topic_image__caption {
+                font-weight: 300;
+                font-size: 0.75rem;
+                line-height: 1.2;
+            }
+        }
+
+        .topic_content {
+            padding: 1rem 0;
+            flex: 1 1 0;
+
+            h3.topic_title {
+                font-size: 2.25rem;
+                font-weight: 900;
+                line-height: 0.9;
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+
+                @media screen and (min-width: $screen-sm) {
+                    font-size: 2.75rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            .topic_body {
+                border-left: 4px solid $brand-yellow;
+                margin-left: 0.75rem;
+                padding: 0.5rem 0 0.5rem 1rem;
+
+                p {
+                    font-size: 0.9rem;
+                    line-height: 1.4;
+                    margin: 0 0 2rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                b {
+                    font-weight: 500;
+                }
+
+                ul {
+                    padding-left: 0.25rem;
+                }
+
+                @media screen and (min-width: $screen-xs) {
+                    margin-left: 1.25rem;
+                    padding: 0.5rem 0 0.5rem 2rem;
+                }
+
+                @media screen and (min-width: $screen-sm) {
+                    p {
+                        font-size: 1rem;
+                    }
                 }
             }
         }

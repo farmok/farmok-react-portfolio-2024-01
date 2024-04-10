@@ -27,22 +27,30 @@ const query = `query{
 
 
 function Footer() {
-    let { data, errors } = useContentful(query);
+  let { data, errors } = useContentful(query);
 
-    if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
-    if (!data) return <span>Loading...</span>;
+  if (errors) return <span style={{ color: "red" }}>{errors.map((error) => error.message).join(",")}</span>;
+  if (!data) return <span>Loading...</span>;
 
-    const navigation = data.navigationBlock;
+  const navigation = data.navigationBlock;
 
-    const primary = navigation.primaryNavigationCollection;
-    const social = navigation.socialNavigationCollection;
+  const primary = navigation.primaryNavigationCollection;
+  const social = navigation.socialNavigationCollection;
 
-    return (
-        <footer className={styles.c_footer}>
-            <Navigation data={primary} />
-            <Navigation data={social} />
-        </footer >
-    );
+  return (
+    <footer className={styles.c_footer}>
+      <nav className={styles.c_nav}>
+        <ul className={styles.nav__group}>
+          <Navigation data={primary} />
+        </ul>
+      </nav>
+      <nav className={styles.c_nav}>
+        <ul className={styles.nav__group}>
+          <Navigation data={social} />
+        </ul>
+      </nav>
+    </footer >
+  );
 }
 
 export default Footer;

@@ -10,6 +10,7 @@
     position: relative;
     top: 0;
     transition:
+        filter 0.5s cubic-bezier(0.32, 0, 0.09, 1),
         top 1s cubic-bezier(0.32, 0, 0.09, 1),
         background-color 1s cubic-bezier(0.32, 0, 0.09, 1);
     width: 100%;
@@ -53,7 +54,9 @@
         }
 
         .card_cta {
+            color: $ui-primary;
             opacity: 1;
+            visibility: visible;
         }
     }
 
@@ -101,6 +104,7 @@
         opacity: 0;
         text-transform: uppercase;
         transition: opacity 0.5s cubic-bezier(0.32, 0, 0.09, 1);
+        visibility: hidden;
     }
 }
 

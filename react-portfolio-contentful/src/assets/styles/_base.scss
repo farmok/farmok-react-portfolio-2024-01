@@ -189,29 +189,5 @@ li {
 .c_introduction,
 .c_body,
 .c_portfolio {
-	padding: 1rem 0.5rem;
-}
-
-.c_main {
-	min-height: 100vh;
-}
-
-.c_body {
-	gap: 6rem;
-}
-
-.c_wrapper {
-	// background: linear-gradient(
-	// 		180deg,
-	// 		scale-color($brand-violet, $alpha: -100%) 85%,
-	// 		scale-color($brand-purple, $alpha: -75%) 95%,
-	// 		scale-color($brand-red, $alpha: -80%) 100%
-	// 	),
-	// 	$brand-black;
-
-	background:
-		linear-gradient(180deg, scale-color($brand-black, $alpha: -90%), scale-color($brand-black, $alpha: -50%)),
-		url(https://ucarecdn.com/f9259c13-e9cb-4e15-a3f8-2a3f4bb13ca7/-/preview/1000x1000/) center bottom / 1000px
-			no-repeat,
-		$brand-black;
+	padding: 1rem 1.5rem;
 }
