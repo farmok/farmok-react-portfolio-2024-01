@@ -1,5 +1,11 @@
 {
   "projects": {
     "default": "farid-portfolio-site"
+  },
+  "targets": {},
+  "etags": {
+    "farid-portfolio-site": {
+      "extensionInstances": {}
+    }
   }
 }

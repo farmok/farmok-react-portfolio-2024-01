@@ -108,10 +108,15 @@
     }
 }
 
-.card_list:hover {
+.c_card:hover {
     cursor: pointer;
+}
 
-    .card_list__item:not(:hover) .c_card {
-        filter: brightness(0.5);
-    }
+// .card_list__item:has(.c_card:hover) .c_card:not(:hover) {
+//     filter: brightness(0.5);
+// }
+
+.card_list:has(.c_card:hover) .c_card:not(:hover),
+.project_list:has(.c_card:hover) .c_card:not(:hover) {
+    filter: brightness(0.5);
 }

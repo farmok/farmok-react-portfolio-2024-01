@@ -4,6 +4,7 @@ import sass from 'sass';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '',
   plugins: [react()],
   css: {
     modules: {

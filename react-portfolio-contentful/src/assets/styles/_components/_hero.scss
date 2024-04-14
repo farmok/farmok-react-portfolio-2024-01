@@ -35,11 +35,9 @@
 			background-image: linear-gradient(
 				90deg,
 				$brand-white 10%,
-				$brand-yellow 20%,
-				$brand-orange 35%,
-				$brand-red 50%,
-				$brand-purple 65%,
-				$brand-violet 80%
+				$brand-yellow 35%,
+				$brand-orange 65%,
+				$brand-red 90%
 			);
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
@@ -80,7 +78,10 @@
 	&[data-template='Landing Page'] {
 		height: 100vh;
 		max-width: 1200px;
-		min-height: 1200px;
+
+		@media screen and (min-width: $screen-sm) {
+			min-height: 1200px;
+		}
 
 		.c_title {
 			max-width: 1200px;
@@ -91,15 +92,22 @@
 			width: 100%;
 
 			& > p {
+				// background-image: linear-gradient(
+				// 	90deg,
+				// 	$brand-yellow 10%,
+				// 	$brand-orange 25%,
+				// 	$brand-red 40%,
+				// 	$brand-purple 60%,
+				// 	$brand-violet 75%,
+				// 	$brand-black 90%
+				// );
 				background-image: linear-gradient(
 					90deg,
-					$brand-white 10%,
-					$brand-yellow 20%,
-					$brand-orange 35%,
-					$brand-red 50%,
-					$brand-purple 65%,
-					$brand-violet 80%,
-					$brand-black 90%
+					$brand-red 10%,
+					$brand-orange 25%,
+					$brand-yellow 50%,
+					$brand-orange 75%,
+					$brand-red 90%
 				);
 				text-align: center;
 
@@ -116,10 +124,10 @@
 		}
 
 		h2.hero_subtitle {
-			color: $ui-primary;
-			font-size: 5vw;
+			color: $brand-yellow;
+			font-size: 5.5vw;
 			font-size: clamp(1.25rem, 5vw, 62px);
-			font-weight: 700;
+			font-weight: 800;
 			padding-right: 0.25em;
 			text-align: right;
 			text-transform: none;
@@ -129,10 +137,34 @@
 		&[data-theme='Home'] {
 			background:
 				url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center /
-					1200px no-repeat,
+					800px no-repeat,
 				url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center /
-					1000px no-repeat,
+					800px no-repeat,
 				$brand-black;
+
+			@media screen and (min-width: $screen-sm) {
+				background:
+					url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center /
+						1200px no-repeat,
+					url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center /
+						1000px no-repeat,
+					$brand-black;
+			}
+
+			&:before {
+				display: block;
+				position: absolute;
+				content: '';
+				height: 100vh;
+				width: 100%;
+				background-color: rgba($color: $brand-black, $alpha: 0.65);
+				z-index: -2;
+
+				@media screen and (min-width: $screen-sm) {
+					background-color: rgba($color: $brand-black, $alpha: 0);
+					width: 100%;
+				}
+			}
 
 			h1.hero_title {
 				p:first-child {
@@ -152,10 +184,34 @@
 		&[data-theme='Leadership'] {
 			background:
 				url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center /
-					1200px no-repeat,
+					800px no-repeat,
 				url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center /
-					1200px no-repeat,
+					800px no-repeat,
 				$brand-black;
+
+			@media screen and (min-width: $screen-sm) {
+				background:
+					url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center /
+						1200px no-repeat,
+					url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center /
+						1200px no-repeat,
+					$brand-black;
+			}
+
+			&:before {
+				display: block;
+				position: absolute;
+				content: '';
+				height: 100vh;
+				width: 100%;
+				background-color: rgba($color: $brand-black, $alpha: 0.65);
+				z-index: -2;
+
+				@media screen and (min-width: $screen-sm) {
+					background-color: rgba($color: $brand-black, $alpha: 0);
+					width: 100%;
+				}
+			}
 
 			h1.hero_title {
 				p:first-child {
@@ -253,11 +309,19 @@
 		}
 	}
 
-	&[data-template='Project List Page'],
-	&[data-template='Project Detail Page'],
-	&[data-template='About Page'] {
+	&[data-template='Project Detail Page'] {
 		margin-top: 70px;
 		padding: 0 1.5rem;
+	}
+
+	&[data-template='Project List Page'],
+	&[data-template='About Page'] {
+		margin-top: 70px;
+		padding: 0 0.5rem;
+
+		.c_title {
+			padding: 1rem 0;
+		}
 	}
 }
 
@@ -268,7 +332,7 @@
 	gap: 1rem;
 	margin-bottom: 2rem;
 	max-width: 960px;
-	padding: 2rem 0.5rem 1rem;
+	padding: 2rem 1rem 1rem;
 
 	h2 {
 		font-size: 1.25rem;
