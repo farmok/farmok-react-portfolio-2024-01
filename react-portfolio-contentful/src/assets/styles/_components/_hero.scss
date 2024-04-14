@@ -21,9 +21,13 @@
 		z-index: 1;
 
 		h1.hero_title {
-			font-size: 2.75rem;
+			font-size: 2.15rem;
 			line-height: 100%;
 			width: 100%;
+
+			@media screen and (min-width: $screen-xs) {
+				font-size: 2.75rem;
+			}
 
 			@media screen and (min-width: $screen-sm) {
 				font-size: 3.75rem;
@@ -311,13 +315,13 @@
 
 	&[data-template='Project Detail Page'] {
 		margin-top: 70px;
-		padding: 0 1.5rem;
+		padding: 0 0.5rem;
 	}
 
 	&[data-template='Project List Page'],
 	&[data-template='About Page'] {
 		margin-top: 70px;
-		padding: 0 0.5rem;
+		padding: 0 1rem;
 
 		.c_title {
 			padding: 1rem 0;

@@ -168,26 +168,3 @@ li {
 		width: 100%;
 	}
 }
-
-.c_header,
-.c_wrapper,
-.c_main,
-.c_container,
-.c_hero,
-.c_title,
-.c_introduction,
-.c_body,
-.c_section,
-.c_portfolio,
-.c_footer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-}
-
-.c_introduction,
-.c_body,
-.c_portfolio {
-	padding: 1rem 1.5rem;
-}
