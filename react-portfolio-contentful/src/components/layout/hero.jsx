@@ -114,9 +114,6 @@ function PageTitle({ content, title, theme }) {
         const tags = content.pageTags
         const download = content.documentDownload
 
-        console.log(content)
-        console.log(download.url)
-
         return (
             <>
                 <section className={styles.c_hero} data-template={content.heroTemplate}>

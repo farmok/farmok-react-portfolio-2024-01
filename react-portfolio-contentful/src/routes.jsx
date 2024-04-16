@@ -1,11 +1,12 @@
 import Home from './pages/home';
 import Design from './pages/design';
-import Leadership from './pages/leadership';
 import About from './pages/about';
 import ProjectList from './pages/project_list';
 import ProjectDetails from './pages/project_detail';
+import Leadership from './pages/leadership';
 
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './hooks/scroll_to_top';
 
 function Nav_Route() {
     return (
@@ -18,6 +19,7 @@ function Nav_Route() {
                 <Route path='/project_list' element={<ProjectList />} />
                 <Route path='/about' element={<About />} />
             </Routes>
+            <ScrollToTop />
         </>
     );
 }
