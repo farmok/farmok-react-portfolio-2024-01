@@ -89,7 +89,7 @@ function Home() {
       <Header />
       <main className={styles.c_main} data-page-template='Landing Page'>
         <PageHero content={hero} theme='Home' />
-        <Carousel title={'Project Spotlight'} cards={projectPageCollection} />
+        <Carousel title='Project Spotlight' cards={projectPageCollection} />
       </main>
       <Footer />
     </div>

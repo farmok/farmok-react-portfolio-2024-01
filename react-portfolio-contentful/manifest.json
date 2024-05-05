@@ -1,0 +1,57 @@
+{
+    "name": "Farid Portfolio",
+    "short_name": "Farid Portfolio",
+    "description": "Relentlessly curious and results-driven Design Leader with over a decade of expertise in shaping remarkable user experiences that fuel brand engagement and revenue growth.",
+    "theme_color": "#fdc85f",
+    "background_color": "#01013c",
+    "display": "standalone",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon.ico",
+            "sizes": "48x48",
+            "type": "image/ico"
+        },
+        {
+            "src": "mstile-150x150.png",
+            "sizes": "270x270",
+            "type": "image/png"
+        },
+        {
+            "src": "safari-pinned-tab.svg",
+            "sizes": "683x683",
+            "type": "image/svg"
+        }
+    ],
+    "splash_pages": null
+}

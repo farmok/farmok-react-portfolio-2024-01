@@ -5,23 +5,24 @@
   "type": "module",
   "homepage": "/",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    // "dev": "vite",
+    // "build": "vite build",
+    // "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    // "preview": "vite preview"
+    "dev": "node server",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "preview": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.19.6",
     "@contentful/rich-text-types": "^16.3.5",
     "contentful": "^10.8.2",
-    "cross-env": "^7.0.3",
-    "express": "^4.19.2",
     "firebase": "^10.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-ga": "^3.3.1",
-    "react-router-dom": "6.4",
-    "sirv": "^2.0.4"
+    "react-router-dom": "6.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",

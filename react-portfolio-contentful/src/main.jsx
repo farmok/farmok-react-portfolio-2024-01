@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Nav_Route from './routes';
+import ReactGA from 'react-ga';
 
-import { BrowserRouter } from 'react-router-dom';
+ReactGA.initialize('G-99BQGKHRBG');
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter forceRefresh={true}>
-      <Nav_Route />
-    </BrowserRouter>
+    <Nav_Route />
   </React.StrictMode>,
 )

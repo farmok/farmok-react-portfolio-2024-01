@@ -31,13 +31,17 @@
     min-height: 100vh;
 
     &[data-page-template='Landing Page'] {
-        gap: 6rem;
+        gap: 3rem;
 
         .c_body {
             gap: 4rem;
             padding: 1rem 0.5rem;
+        }
 
-            @media screen and (min-width: $screen-sm) {
+        @media screen and (min-width: $screen-sm) {
+            gap: 6rem;
+
+            .c_body {
                 gap: 6rem;
             }
         }
@@ -75,10 +79,14 @@
     &[data-page-template='Project Page'] {
         background: url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center -660px / 1200px
             no-repeat;
-        gap: 3rem;
+        gap: 1rem;
 
         .c_body {
-            gap: 6rem;
+            gap: 3rem;
+
+            @media screen and (min-width: $screen-sm) {
+                gap: 6rem;
+            }
         }
     }
 

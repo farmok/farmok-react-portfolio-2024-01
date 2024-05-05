@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import Card from '../common/card';
-import ScrollToTop from '../../hooks/scroll_to_top';
+// import ScrollToTop from '../../hooks/scroll_to_top';
 
 import styles from '../../assets/styles/main.module.scss';
 

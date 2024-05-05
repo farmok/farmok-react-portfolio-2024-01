@@ -54,6 +54,10 @@ li {
 	line-height: 1.35rem;
 	list-style-type: disc;
 	margin-bottom: 0.75rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .button {

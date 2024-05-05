@@ -148,7 +148,7 @@
 				url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center /
 					800px no-repeat,
 				url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center /
-					800px no-repeat,
+					600px no-repeat,
 				$brand-black;
 
 			@media screen and (min-width: $screen-sm) {
@@ -195,7 +195,7 @@
 				url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center center /
 					800px no-repeat,
 				url(https://ucarecdn.com/a671c447-b0d0-4edc-bfab-0f2fcc593462/-/preview/1200x1200/) center center /
-					800px no-repeat,
+					600px no-repeat,
 				$brand-black;
 
 			@media screen and (min-width: $screen-sm) {
@@ -234,6 +234,42 @@
 
 			.c_introduction p {
 				font-size: clamp(1.15rem, 3vw, 24px);
+			}
+		}
+
+		&[data-theme='404'] {
+			background: url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center
+				center / 800px no-repeat;
+			padding: 1rem;
+
+			@media screen and (min-width: $screen-sm) {
+				background: url(https://ucarecdn.com/25a9e97f-c274-41f0-8ddb-81791d4d0351/-/preview/1200x1200/) center
+					center / 1200px no-repeat;
+			}
+
+			.c_title {
+				background-color: rgba($color: $brand-black, $alpha: 0.75);
+				border-radius: 1.5rem;
+				padding: 1rem;
+			}
+
+			h1.hero_title {
+				font-size: 14vw;
+				line-height: 100%;
+				width: 100%;
+
+				@media screen and (min-width: $screen-xl) {
+					font-size: 180px;
+				}
+			}
+
+			.c_introduction {
+				display: block;
+				font-size: clamp(1.15rem, 3vw, 24px);
+				line-height: 1.4;
+				max-width: none;
+				padding: 0;
+				width: 100%;
 			}
 		}
 	}
@@ -389,5 +425,11 @@
 
 	&[data-theme='About'] {
 		font-size: clamp(0.85rem, 3vw, 16px);
+
+		h5 {
+			font-size: 1.5rem;
+			line-height: 1.35;
+			margin-bottom: 2rem;
+		}
 	}
 }
